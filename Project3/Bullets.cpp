@@ -1,6 +1,8 @@
 #include "Stdafx.h"
 #include "Bullets.h"
 
+
+
 HRESULT Missile::init(int bulletMax, float range)
 {
 	_range = range;
@@ -175,6 +177,5 @@ void MissileM1::move(void)
 		{
 			_viBullet++;
 		}
-
 	}
 }
