@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="CordingInterview">
+      <UniqueIdentifier>{8010b4ae-d890-4cc9-87e6-9fbd5e8720bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\core">
+      <UniqueIdentifier>{a0aba2f6-b128-4305-ad67-eb2921ea7537}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\core\manager">
+      <UniqueIdentifier>{3a97075a-2bb5-437a-a970-b35380eef11e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\core\Stdafx">
+      <UniqueIdentifier>{6c87897b-156b-48cd-b0a7-c5bcf3f6b093}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\core\singletonbase">
+      <UniqueIdentifier>{cb41832a-68ed-4956-8c19-2d8e5eafc9ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\ShootingGame">
+      <UniqueIdentifier>{e45ac3a4-12b6-4074-8adf-58ce2a0502a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\ShootingGame\Player">
+      <UniqueIdentifier>{efd3136d-4b5f-427a-bf53-59c3392360d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\ShootingGame\Utility">
+      <UniqueIdentifier>{85679f30-f75c-4085-becd-c6ec432b36c9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GImage.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="maingame.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="GameNode.h">
+      <Filter>소스 파일\core</Filter>
+    </ClInclude>
+    <ClInclude Include="FontManager.h">
+      <Filter>소스 파일\core\manager</Filter>
+    </ClInclude>
+    <ClInclude Include="GameManager.h">
+      <Filter>소스 파일\core\manager</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageManager.h">
+      <Filter>소스 파일\core\manager</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyManager.h">
+      <Filter>소스 파일\core\manager</Filter>
+    </ClInclude>
+    <ClInclude Include="TempSoundManager.h">
+      <Filter>소스 파일\core\manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Stdafx.h">
+      <Filter>소스 파일\core\Stdafx</Filter>
+    </ClInclude>
+    <ClInclude Include="SingletonBase.h">
+      <Filter>소스 파일\core\singletonbase</Filter>
+    </ClInclude>
+    <ClInclude Include="CommonMacroFunction.h">
+      <Filter>소스 파일\core\manager</Filter>
+    </ClInclude>
+    <ClInclude Include="RandomFunction.h">
+      <Filter>소스 파일\core\manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils.h">
+      <Filter>소스 파일\ShootingGame\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Rocket.h">
+      <Filter>소스 파일\ShootingGame\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Flame.h">
+      <Filter>소스 파일\ShootingGame\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullets.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="WinMain.cpp">
+      <Filter>소스 파일\core</Filter>
+    </ClCompile>
+    <ClCompile Include="GameNode.cpp">
+      <Filter>소스 파일\core</Filter>
+    </ClCompile>
+    <ClCompile Include="FontManager.cpp">
+      <Filter>소스 파일\core\manager</Filter>
+    </ClCompile>
+    <ClCompile Include="GameManager.cpp">
+      <Filter>소스 파일\core\manager</Filter>
+    </ClCompile>
+    <ClCompile Include="GImage.cpp">
+      <Filter>소스 파일\core\manager</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageManager.cpp">
+      <Filter>소스 파일\core\manager</Filter>
+    </ClCompile>
+    <ClCompile Include="KeyManager.cpp">
+      <Filter>소스 파일\core\manager</Filter>
+    </ClCompile>
+    <ClCompile Include="TempSoundManager.cpp">
+      <Filter>소스 파일\core\manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Stdafx.cpp">
+      <Filter>소스 파일\core\Stdafx</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils.cpp">
+      <Filter>소스 파일\ShootingGame\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Flame.cpp">
+      <Filter>소스 파일\ShootingGame\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Rocket.cpp">
+      <Filter>소스 파일\ShootingGame\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="maingame.cpp" />
+    <ClCompile Include="Bullets.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="CordingInterview\Question.txt">
+      <Filter>CordingInterview</Filter>
+    </Text>
+  </ItemGroup>
+</Project>
