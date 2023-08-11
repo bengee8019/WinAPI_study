@@ -52,6 +52,7 @@ void Missile::fire(float x, float y)
 		_viBullet->y = _viBullet->fireY;
 		_viBullet->rc = RectMakeCenter(_viBullet->x, _viBullet->y, _viBullet->img->getFrameWidth(), _viBullet->img->getFrameHeight());
 
+		twst
 		break;
 	}
 }
