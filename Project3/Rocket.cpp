@@ -14,7 +14,7 @@ HRESULT Rocket::init(void)
 
     _flame = new Flame;
     _flame->init("Resources/Flame.bmp", &_x, &_y);
-
+	_missile.init(5, 500);
 
     //spRocket.push_back(std::shared_ptr<Rocket>(new Rocket));
     return S_OK;
@@ -49,12 +49,12 @@ void Rocket::update(void)
     {
 
     }
-    //_flame->update();
+    _flame->update();
 
 }
 
 void Rocket::render(void)
 {
     _image->render(getMemDC(), _x, _y);
-    //_flame->render();
+    _flame->render();
 }

@@ -3,13 +3,14 @@
 
 HRESULT Flame::init(const char* imageName, float* x, float* y)
 {
-
-	_image = IMAGEMANAGER->addFrameImage("ºÒ²É", imageName, 432, 297, 9, 1, true, RGB(255, 0, 255));
+	_image = IMAGEMANAGER->addFrameImage("ºÒ²É", imageName, 0, 0, 432, 297, 9, 1, true, RGB(255, 0, 255));
 
 	_x = x;
 	_y = y;
 
 	_rc = RectMakeCenter((int)_x, (int)_y, _image->getFrameWidth(), _image->getFrameHeight());
+
+	_flameTick = 7.0f;
 
 	return S_OK;
 }
@@ -28,7 +29,7 @@ void Flame::update()
 			_image->setFrameX(0);
 		}
 	}
-	_rc = RectMakeCenter(*_x, *_y, _image->getFrameWidth(), _image->getFrameHeight());
+	_rc = RectMakeCenter(*_x+25, *_y+210, _image->getFrameWidth(), _image->getFrameHeight());
 
 }
 
@@ -41,6 +42,7 @@ void Flame::render()
 
 void Flame::release()
 {
+
 }
 
 Flame::Flame()

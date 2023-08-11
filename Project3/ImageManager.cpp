@@ -82,7 +82,7 @@ GImage* ImageManager::addImage(string strKey, const char* fileName, float x, flo
 	}
 	_mImageList.insert(pair<string, GImage*>(strKey, img));
 
-	return img;;
+	return img;
 
 }
 
@@ -103,7 +103,7 @@ GImage* ImageManager::addFrameImage(string strKey, const char* fileName, int wid
 	}
 	_mImageList.insert(pair<string, GImage*>(strKey, img));
 
-	return nullptr;
+	return img;
 }
 
 GImage* ImageManager::addFrameImage(string strKey, const char* fileName, float x, float y, int width, int height, int maxFrameX, int maxFrameY, bool isTrans, COLORREF transColor)
@@ -123,7 +123,7 @@ GImage* ImageManager::addFrameImage(string strKey, const char* fileName, float x
 	}
 	_mImageList.insert(pair<string, GImage*>(strKey, img));
 
-	return nullptr;
+	return img;
 
 }
 

@@ -1,6 +1,7 @@
 #pragma once
 #include "GameNode.h"
 #include "Flame.h"
+#include "Bullets.h"
 
 #define ROCKET_SPEED 3.0f
 
@@ -60,6 +61,7 @@ class Rocket : public GameNode//, public std::enable_shared_from_this<Rocket>
 private:
 	GImage* _image;
 	Flame* _flame;
+	Missile _missile;
 
 	//GImage* objectData;
 	//Flame* (*pfFlame) (void);

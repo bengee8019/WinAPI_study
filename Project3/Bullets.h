@@ -1,6 +1,6 @@
 #pragma once
 #include "GameNode.h"
-
+#define BULLET_COUNT 10
 //기능을 묶었다!
 //비슷한건 묶자
 struct tagBullet
@@ -32,7 +32,7 @@ private:
 	vector<tagBullet>::iterator _viBullet;
 
 	float _range;
-	
+	float _BulletTick;
 
 public:
 	HRESULT init(int bulletMax, float range);
@@ -73,12 +73,12 @@ public:
 };
 
 
-
-class Bullets
-{
-
-public:
-	Bullets();
-	~Bullets();
-};
-
+//
+//class Bullets
+//{
+//
+//public:
+//	Bullets();
+//	~Bullets();
+//};
+//

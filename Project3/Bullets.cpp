@@ -12,12 +12,13 @@ HRESULT Missile::init(int bulletMax, float range)
 		ZeroMemory(&bullet, sizeof(tagBullet));
 
 		bullet.img = new GImage;
-		bullet.img->init("Resources/Missile.bmp",);
+		bullet.img->init("Resources/Missile.bmp",416,64,13,1,true,RGB(255,0,255));
 		bullet.fire = false;
 		bullet.speed = 5.0f;
 
 		_vBullet.push_back(bullet);
 	}
+	_BulletTick = 7.0f;
 
 	return S_OK;
 }
@@ -58,18 +59,37 @@ void Missile::fire(float x, float y)
 
 void Missile::draw(void)
 {
-	//for (_viBullet = _vBullet.begin(); _viBullet != _vBullet.end(); ++_viBullet)
-	//{
+	for (_viBullet = _vBullet.begin(); _viBullet != _vBullet.end(); ++_viBullet)
+	{
+		if (!_viBullet->fire) continue;
 
-	//}
+		_viBullet->img->frameRender(getMemDC(), _viBullet->x, _viBullet->y, _viBullet->img->getFrameX(), _viBullet->img->getFrameY());
+	}
 }
 
 void Missile::move(void)
 {
-	//for (_viBullet = _vBullet.begin(); _viBullet != _vBullet.end(); ++_viBullet)
-	//{
+	//MY_UTIL::getDistance();
 
-	//}
+	for (_viBullet = _vBullet.begin(); _viBullet != _vBullet.end(); ++_viBullet)
+	{
+		if (MY_UTIL::getDistance(_viBullet->fireX, _viBullet->fireY, _viBullet->x, _viBullet->y) >= _range)
+		{
+
+		}
+		if (BULLET_COUNT + _BulletTick <= GetTickCount())
+		{
+			_BulletTick = GetTickCount();
+			_viBullet->img->setFrameX(_viBullet->img->getFrameX() + 1);
+
+			if (_viBullet->img->getFrameX() >= _viBullet->img->getMaxFrameX())
+			{
+				_viBullet->img->setFrameX(0);
+			}
+		}
+		_viBullet->y -= _viBullet->speed;
+		_viBullet->rc = RectMakeCenter(_viBullet->x, _viBullet->y, _viBullet->img->getFrameWidth(), _viBullet->img->getFrameHeight());
+	}
 }
 
 //==============================================================
@@ -109,7 +129,7 @@ void MissileM1::fire(float x, float y)
 	ZeroMemory(&bullet, sizeof(tagBullet));
 
 	bullet.img = new GImage;
-	bullet.img->init("Resources/Missile.bmp");
+	bullet.img->init("Resources/Missile.bmp", 416, 64, 13, 1, true, RGB(255, 0, 255));
 	//bullet.img->init("Resources/.bmp",);
 	bullet.speed = 5.0f;
 	bullet.x = bullet.fireX = x;
@@ -117,9 +137,6 @@ void MissileM1::fire(float x, float y)
 	bullet.rc = RectMakeCenter(bullet.x, bullet.y, bullet.img->getFrameWidth(), bullet.img->getFrameHeight());
 
 	_vBullet.push_back(bullet);
-
-
-
 }
 
 void MissileM1::draw(void)
