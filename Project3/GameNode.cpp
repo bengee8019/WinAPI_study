@@ -23,7 +23,7 @@ HRESULT GameNode::init(bool managerInit)
 		RND->init();
 		KEYMANAGER->init();
 		IMAGEMANAGER->init();
-		SOUNDMANAGER->init();
+		//SOUNDMANAGER->init();
 		return S_OK;
 	}
 	return S_FALSE;
@@ -56,7 +56,7 @@ void GameNode::release()
 		IMAGEMANAGER->release();
 		IMAGEMANAGER->releaseSingleton();
 		FONTMANAGER->releaseSingleton();
-		SOUNDMANAGER->releaseSingleton();
+		//SOUNDMANAGER->releaseSingleton();
 	}
 
 	ReleaseDC(_hWnd, _hdc);

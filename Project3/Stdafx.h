@@ -144,7 +144,7 @@ Inline 함수
 #include "KeyManager.h"
 #include "ImageManager.h"
 #include "FontManager.h"
-#include "TempSoundManager.h"
+//#include "TempSoundManager.h"
 //#include "ItemManager.h"
 #include "Utils.h"
 //
@@ -157,8 +157,8 @@ using namespace MY_UTIL;
 #define KEYMANAGER KeyManager::getSingleton()
 #define IMAGEMANAGER ImageManager::getSingleton()
 #define FONTMANAGER FontManager::getSingleton()
-#define SOUNDMANAGER TempSoundManager::getSingleton()
-#define ITEMMANAGER ItemManager::getSingleton()
+//#define SOUNDMANAGER TempSoundManager::getSingleton()
+//#define ITEMMANAGER ItemManager::getSingleton()
 
 //타이틀
 #define WINNAME		(LPTSTR)(TEXT("WindowsAPI"))

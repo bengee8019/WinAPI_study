@@ -57,6 +57,7 @@ private:
 
 	float _range;
 	int _bulletMax;
+	float _BulletTick;
 
 public:
 	HRESULT init(int bulletMax, float range);

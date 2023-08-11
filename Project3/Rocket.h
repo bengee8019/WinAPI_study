@@ -61,7 +61,8 @@ class Rocket : public GameNode//, public std::enable_shared_from_this<Rocket>
 private:
 	GImage* _image;
 	Flame* _flame;
-	Missile _missile;
+	//Missile _missile;
+	MissileM1 _missileM1;
 
 	//GImage* objectData;
 	//Flame* (*pfFlame) (void);

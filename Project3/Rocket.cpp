@@ -14,7 +14,8 @@ HRESULT Rocket::init(void)
 
     _flame = new Flame;
     _flame->init("Resources/Flame.bmp", &_x, &_y);
-	_missile.init(5, 500);
+	//_missile.init(10, 500);
+    _missileM1.init(10, 500);
 
     //spRocket.push_back(std::shared_ptr<Rocket>(new Rocket));
     return S_OK;
@@ -47,9 +48,12 @@ void Rocket::update(void)
 
     if (KEYMANAGER->isOnceKeyDown(VK_SPACE))
     {
-
+        //_missile.fire(_x,_y);
+        _missileM1.fire(_x, _y);
     }
     _flame->update();
+    //_missile.update();
+    _missileM1.update();
 
 }
 
@@ -57,4 +61,6 @@ void Rocket::render(void)
 {
     _image->render(getMemDC(), _x, _y);
     _flame->render();
+    //_missile.render();
+    _missileM1.render();
 }

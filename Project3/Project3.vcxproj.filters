@@ -60,9 +60,6 @@
     <ClInclude Include="KeyManager.h">
       <Filter>소스 파일\core\manager</Filter>
     </ClInclude>
-    <ClInclude Include="TempSoundManager.h">
-      <Filter>소스 파일\core\manager</Filter>
-    </ClInclude>
     <ClInclude Include="Stdafx.h">
       <Filter>소스 파일\core\Stdafx</Filter>
     </ClInclude>
@@ -85,7 +82,7 @@
       <Filter>소스 파일\ShootingGame\Player</Filter>
     </ClInclude>
     <ClInclude Include="Bullets.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>소스 파일\ShootingGame</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -110,9 +107,6 @@
     <ClCompile Include="KeyManager.cpp">
       <Filter>소스 파일\core\manager</Filter>
     </ClCompile>
-    <ClCompile Include="TempSoundManager.cpp">
-      <Filter>소스 파일\core\manager</Filter>
-    </ClCompile>
     <ClCompile Include="Stdafx.cpp">
       <Filter>소스 파일\core\Stdafx</Filter>
     </ClCompile>
@@ -127,7 +121,7 @@
     </ClCompile>
     <ClCompile Include="maingame.cpp" />
     <ClCompile Include="Bullets.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\ShootingGame</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
