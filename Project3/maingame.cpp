@@ -11,7 +11,7 @@ HRESULT maingame::init()
 	//_rocket->init();
 	//_tileMap = new TileMap;
 	//_tileMap->init();
-	_GN = new Rocket;
+	_GN = new TileMap;
 	_GN->init();
 
 	//std::shared_ptr<Rocket> PlayerA = std::make_shared<Rocket>();
