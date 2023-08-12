@@ -27,6 +27,7 @@ private:
 
 	int randomIndex1;
 	int randomIndex2;
+
 	RECT _mapRC;
 	vector<tagTile> _vTiles;
 	vector<tagTile>::iterator _viTiles;

@@ -30,12 +30,6 @@ HRESULT TileMap::init()
 
 void TileMap::update()
 {
-	//tilenum 2 미만 예외처리 
-	//if (_tileNum < 2)
-	//{
-	//	setNewTile();
-	//}
-
 	if (_inputSwitch)
 	{
 		keyInput();
@@ -44,10 +38,14 @@ void TileMap::update()
 			//창 띄워서 입력 받기
 			if (_intBuffer != "")
 			{
-				_inputSwitch = false;
-				_tileNum = stoi(_intBuffer);
+				//tilenum 2 미만 예외처리 
+				if (stoi(_intBuffer) >= 2)
+				{
+					_inputSwitch = false;
+					_tileNum = stoi(_intBuffer);
+					setNewTile(_tileNum);
+				}
 				_intBuffer = "";
-				setNewTile(_tileNum);
 			}
 		}
 	}
@@ -60,8 +58,6 @@ void TileMap::update()
 		}
 	tileInteract();
 	}
-	//마우스 상호작용
-	//입력받은값으로 setNewTile()실행, 
 }
 
 void TileMap::render()
@@ -145,13 +141,19 @@ void TileMap::tileInteract()
 		{
 			if (KEYMANAGER->isOnceKeyDown(VK_LBUTTON))
 			{
-				_onMouse = true;
-				_viTiles->filled = false;
+				if (_viTiles->filled)
+				{
+					_onMouse = true;
+					_viTiles->filled = false;
+				}
 			}
 			if (KEYMANAGER->isOnceKeyUp(VK_LBUTTON))
 			{
-				_onMouse = false;
-				_viTiles->filled = true;
+				if (_onMouse)
+				{
+					_onMouse = false;
+					_viTiles->filled = true;
+				}
 			}
 		}
 	}
@@ -159,49 +161,44 @@ void TileMap::tileInteract()
 
 void TileMap::keyInput()
 {
-	if (KEYMANAGER->isOnceKeyDown(0x30))// || 0x60))
+	if (KEYMANAGER->isOnceKeyDown(0x30))
 	{
 		_intBuffer += "0";
 	}
-	if (KEYMANAGER->isOnceKeyDown(0x31))// || 0x61))
+	if (KEYMANAGER->isOnceKeyDown(0x31))
 	{
 		_intBuffer += "1";
 	}
-	if (KEYMANAGER->isOnceKeyDown(0x32))// || 0x62))
+	if (KEYMANAGER->isOnceKeyDown(0x32))
 	{
 		_intBuffer += "2";
 	}
-	if (KEYMANAGER->isOnceKeyDown(0x33))// || 0x63))
+	if (KEYMANAGER->isOnceKeyDown(0x33))
 	{
 		_intBuffer += "3";
 	}
-	if (KEYMANAGER->isOnceKeyDown(0x34))// || 0x64))
+	if (KEYMANAGER->isOnceKeyDown(0x34))
 	{
 		_intBuffer += "4";
 	}
-	if (KEYMANAGER->isOnceKeyDown(0x35))// || 0x65))
+	if (KEYMANAGER->isOnceKeyDown(0x35))
 	{
 		_intBuffer += "5";
 	}
-	if (KEYMANAGER->isOnceKeyDown(0x36))// || 0x66))
+	if (KEYMANAGER->isOnceKeyDown(0x36))
 	{
 		_intBuffer += "6";
 	}
-	if (KEYMANAGER->isOnceKeyDown(0x37))// || 0x67))
+	if (KEYMANAGER->isOnceKeyDown(0x37))
 	{
 		_intBuffer += "7";
 	}
-	if (KEYMANAGER->isOnceKeyDown(0x38))// || 0x68))
+	if (KEYMANAGER->isOnceKeyDown(0x38))
 	{
 		_intBuffer += "8";
 	}
-	if (KEYMANAGER->isOnceKeyDown(0x39))// || 0x69))
+	if (KEYMANAGER->isOnceKeyDown(0x39))
 	{
 		_intBuffer += "9";
 	}
 }
-
-
-//클릭시 이미지 출력 X;
-//isKeyStay 마우스 위치 따라오는 렉트 , isKeyOnceUp일때 해당 위치에 이미지 채워넣기;
-//
