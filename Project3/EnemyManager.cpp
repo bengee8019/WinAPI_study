@@ -19,8 +19,8 @@ HRESULT EnemyManager::init(void)
 {
 	IMAGEMANAGER->addFrameImage("해파리","Resources/JellyFish.bmp", 0.0f, 0.0f, 1140 , 47 , 19 , 1 , true, RGB(255, 0, 255));
 
-	setMinion(100,100,44,20,40,40);
-
+	setMinion(10,10,40,200,60,60);
+	setSpinMinion(500, 500, 6, 200);
 	return S_OK;
 }
 
@@ -63,14 +63,14 @@ void EnemyManager::setMinion(int x, int y, int windex, int hindex, int width, in
 	}
 }
 
-void EnemyManager::setSpinMinion(int x, int y, int num, int radius, float rspd, float aspd)
+void EnemyManager::setSpinMinion(int x, int y, int num, int radius)//, float rspd, float aspd)
 {
 	float tmpAngle = 360 / num;
 	for (int i = 0; i < num; i++)
 	{
 		Enemy* jellyFish;
 		jellyFish = new SpinMinion;
-		jellyFish->init("해파리", PointMake(x+radius*cosf(tmpAngle*i), y + radius * sinf(tmpAngle * i)));
+		jellyFish->init("해파리", PointMake(x+radius*cosf(DEG_TO_RAD*tmpAngle*i), y + radius * sinf(DEG_TO_RAD*tmpAngle * i)));
 		_vMinion.push_back(jellyFish);
 	}
 }

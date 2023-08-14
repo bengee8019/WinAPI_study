@@ -47,13 +47,3 @@ namespace MY_UTIL
 
 }
 
-
-
-/*
-To.진영이형에게....
-
-뉴진스의 ditto 불러주세요
-
-from.하잎보이
-
-*/

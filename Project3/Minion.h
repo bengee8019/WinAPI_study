@@ -12,10 +12,10 @@ public:
 class SpinMinion :public Enemy
 {
 private:
-	float _radius;
-	float _angle;
-	float _aSpd;
-	float _rSpd;
+	float _radius = 50;
+	float _angle = 0;
+	float _aSpd = 5;
+	float _rSpd = 5;
 
 public:
 
