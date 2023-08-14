@@ -37,6 +37,12 @@
     <Filter Include="소스 파일\ShootingGame\Utility">
       <UniqueIdentifier>{85679f30-f75c-4085-becd-c6ec432b36c9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\ShootingGame\Enemy">
+      <UniqueIdentifier>{81b37cbf-8689-487b-a581-13fadcd49e56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\ShootingGame\Bullets">
+      <UniqueIdentifier>{6b680337-7075-4f39-aaec-6dc37d3e129d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GImage.h">
@@ -81,11 +87,20 @@
     <ClInclude Include="Flame.h">
       <Filter>소스 파일\ShootingGame\Player</Filter>
     </ClInclude>
-    <ClInclude Include="Bullets.h">
-      <Filter>소스 파일\ShootingGame</Filter>
-    </ClInclude>
     <ClInclude Include="TileMap.h">
       <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Minion.h">
+      <Filter>소스 파일\ShootingGame\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>소스 파일\ShootingGame\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyManager.h">
+      <Filter>소스 파일\ShootingGame\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullets.h">
+      <Filter>소스 파일\ShootingGame\Bullets</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -123,11 +138,20 @@
       <Filter>소스 파일\ShootingGame\Player</Filter>
     </ClCompile>
     <ClCompile Include="maingame.cpp" />
-    <ClCompile Include="Bullets.cpp">
-      <Filter>소스 파일\ShootingGame</Filter>
-    </ClCompile>
     <ClCompile Include="TileMap.cpp">
       <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>소스 파일\ShootingGame\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyManager.cpp">
+      <Filter>소스 파일\ShootingGame\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Minion.cpp">
+      <Filter>소스 파일\ShootingGame\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullets.cpp">
+      <Filter>소스 파일\ShootingGame\Bullets</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

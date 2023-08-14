@@ -49,7 +49,7 @@ void Rocket::update(void)
     if (KEYMANAGER->isOnceKeyDown(VK_SPACE))
     {
         //_missile.fire(_x,_y);
-        _missileM1.fire(_x, _y);
+        _missileM1.fire(_x+10, _y-60);
     }
     _flame->update();
     //_missile.update();

@@ -146,6 +146,8 @@
   <ItemGroup>
     <ClInclude Include="Bullets.h" />
     <ClInclude Include="CommonMacroFunction.h" />
+    <ClInclude Include="Enemy.h" />
+    <ClInclude Include="EnemyManager.h" />
     <ClInclude Include="Flame.h" />
     <ClInclude Include="FontManager.h" />
     <ClInclude Include="GameManager.h" />
@@ -154,6 +156,7 @@
     <ClInclude Include="ImageManager.h" />
     <ClInclude Include="KeyManager.h" />
     <ClInclude Include="maingame.h" />
+    <ClInclude Include="Minion.h" />
     <ClInclude Include="RandomFunction.h" />
     <ClInclude Include="Rocket.h" />
     <ClInclude Include="SingletonBase.h" />
@@ -163,6 +166,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Bullets.cpp" />
+    <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="EnemyManager.cpp" />
     <ClCompile Include="Flame.cpp" />
     <ClCompile Include="FontManager.cpp" />
     <ClCompile Include="GameManager.cpp" />
@@ -171,6 +176,7 @@
     <ClCompile Include="ImageManager.cpp" />
     <ClCompile Include="KeyManager.cpp" />
     <ClCompile Include="maingame.cpp" />
+    <ClCompile Include="Minion.cpp" />
     <ClCompile Include="Rocket.cpp" />
     <ClCompile Include="Stdafx.cpp" />
     <ClCompile Include="TileMap.cpp" />

@@ -171,6 +171,7 @@ void MissileM1::move(void)
 		_viBullet->rc = RectMakeCenter(_viBullet->x, _viBullet->y, _viBullet->img->getFrameWidth(), _viBullet->img->getFrameHeight());
 		if (MY_UTIL::getDistance(_viBullet->fireX, _viBullet->fireY, _viBullet->x, _viBullet->y) >= _range)
 		{
+			SAFE_DELETE(_viBullet->img);
 			_viBullet = _vBullet.erase(_viBullet);
 		}
 		else
