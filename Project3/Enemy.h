@@ -17,14 +17,15 @@ protected:
 
 public:
 	HRESULT init(void);
-	HRESULT init(const char* imageName,POINT position);
+	HRESULT init(const char* imageName, POINT position);
+	HRESULT init(const char* imageName, POINT position);
 
 
 	void release(void);
 	void update(void);
 	void render(void);
 
-	void move(void);
+	virtual void move(void);
 	void draw(void);
 	void animation(void);
 

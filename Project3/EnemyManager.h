@@ -19,7 +19,8 @@ public:
 	void update(void);
 	void render(void);
 
-	void setMinion(void);
+	void setMinion(int x, int y, int windex, int hindex, int width, int height);
+	void setSpinMinion(int x, int y, int num, int radius, float rspd, float aspd);
 
 	EnemyManager();
 	~EnemyManager();

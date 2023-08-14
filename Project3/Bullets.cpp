@@ -121,6 +121,7 @@ void MissileM1::release()
 {
 	for (_viBullet = _vBullet.begin(); _viBullet != _vBullet.end(); ++_viBullet)
 	{
+		_viBullet->img->release();
 		SAFE_DELETE(_viBullet->img);
 	}
 }
