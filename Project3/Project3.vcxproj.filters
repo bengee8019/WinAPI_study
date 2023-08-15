@@ -43,6 +43,9 @@
     <Filter Include="소스 파일\ShootingGame\Bullets">
       <UniqueIdentifier>{6b680337-7075-4f39-aaec-6dc37d3e129d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Memo">
+      <UniqueIdentifier>{bda7f3a0-fea9-4e7d-8228-93f6d6b7ccf6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GImage.h">
@@ -157,6 +160,12 @@
   <ItemGroup>
     <Text Include="CordingInterview\Question.txt">
       <Filter>CordingInterview</Filter>
+    </Text>
+    <Text Include="CordingInterview\0814 면접 예상 질문.txt">
+      <Filter>Memo</Filter>
+    </Text>
+    <Text Include="기능 배분.txt">
+      <Filter>Memo</Filter>
     </Text>
   </ItemGroup>
 </Project>

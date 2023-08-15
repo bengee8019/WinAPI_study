@@ -19,8 +19,11 @@ public:
 	void update(void);
 	void render(void);
 
-	void setMinion(int x, int y, int windex, int hindex, int width, int height);
-	void setSpinMinion(int x, int y, int num, int radius);//, float rspd, float aspd);
+	void setMinion();
+	void setNormalMinion(int x, int y, int windex, int hindex, int width, int height);
+	void setSpinMinion(int x, int y, int num, int radius);
+	void setWaveMinion(int x, int y, int windex, int hindex, int width, int height);
+	void setEclipseMinion(int x, int y, float aRange, int num, int radius);
 
 	EnemyManager();
 	~EnemyManager();

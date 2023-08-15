@@ -61,8 +61,8 @@ class Rocket : public GameNode//, public std::enable_shared_from_this<Rocket>
 private:
 	GImage* _image;
 	Flame* _flame;
-	//Missile _missile;
-	MissileM1 _missileM1;
+	MissileM1* _Weapon;
+	MissileM1* _missileM1;
 
 	//GImage* objectData;
 	//Flame* (*pfFlame) (void);
@@ -78,6 +78,7 @@ public:
 	void release(void);
 	void update(void);
 	void render(void);
+	void WeaponChange();
 	//POINT* 
 	//포인터를 공유한다 -> 소유권 문제 발생할 수 있다. 
 	//배열 형태로 포인터가 관리될텐데 1번 포인터에 소유권이 있을것.

@@ -36,9 +36,10 @@ HRESULT Enemy::init(const char* imageName, POINT position)
 {
 	_worldTimeCount = GetTickCount();
 	_rndTimeCount = RND->getFromFloatTo(50, 150);
-
+	_x = (float)position.x;
+	_y = (float)position.y;
 	_image = IMAGEMANAGER->findImage(imageName);
-	_rc = RectMakeCenter(position.x, position.y, 60, 47);
+	_rc = RectMakeCenter(_x, _y, 60, 47);
 	return S_OK;
 }
 
@@ -66,7 +67,7 @@ void Enemy::move(void)
 
 void Enemy::draw(void)
 {
-	_image->frameRender(getMemDC(), _rc.left, _rc.top, _CurrentFrameX, _CurrentFrameY);
+	_image->frameRender(getMemDC(), _x - _image->getFrameWidth() / 2, _y - _image->getFrameHeight() / 2, _CurrentFrameX, _CurrentFrameY);
 }
 
 void Enemy::animation(void)

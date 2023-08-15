@@ -184,7 +184,9 @@
     <ClCompile Include="WinMain.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="CordingInterview\0814 면접 예상 질문.txt" />
     <Text Include="CordingInterview\Question.txt" />
+    <Text Include="기능 배분.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
