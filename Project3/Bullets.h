@@ -96,3 +96,16 @@ public:
 	MiniRocket();
 	~MiniRocket();
 };
+
+class TrackerMissile : public MissileM1
+{
+private:
+public:
+
+	void fire(float x, float y);
+	void move(void);
+	float findEnemy()
+
+	TrackerMissile();
+	~TrackerMissile();
+};

@@ -334,3 +334,7 @@ player, map 파트와 연동
 
 
 
+
+클래스간 효율적인 정보전달
+std::functional
+찾아보기!!

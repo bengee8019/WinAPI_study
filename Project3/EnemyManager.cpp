@@ -117,3 +117,14 @@ void EnemyManager::setEclipseMinion(int x, int y, float aRange, int num, int rad
 		_vMinion.push_back(jellyFish);
 	}
 }
+
+POINT EnemyManager::getTracePoint(POINT pt)
+{
+	int tmpDist = 1000;
+	for (_viMinion = _vMinion.begin(); _viMinion != _vMinion.end(); ++_viMinion)
+	{
+		tmpDist = MY_UTIL::getDistance(pt.x, pt.y, (*_viMinion)->getX(), (*_viMinion)->getY());
+	}
+
+	return POINT();
+}

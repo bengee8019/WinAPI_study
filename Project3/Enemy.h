@@ -27,6 +27,8 @@ public:
 	virtual void move(void);
 	void draw(void);
 	void animation(void);
+	float getX() { return _x; }
+	float getY() { return _y; }
 
 	Enemy(void);
 	~Enemy(void);

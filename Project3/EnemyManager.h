@@ -24,6 +24,10 @@ public:
 	void setSpinMinion(int x, int y, int num, int radius);
 	void setWaveMinion(int x, int y, int windex, int hindex, int width, int height);
 	void setEclipseMinion(int x, int y, float aRange, int num, int radius);
+	POINT getTracePoint(POINT pt);
+	float* getTraceX(POINT pt);
+	float* getTraceY(POINT pt);
+
 
 	EnemyManager();
 	~EnemyManager();
