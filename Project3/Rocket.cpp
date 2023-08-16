@@ -16,6 +16,7 @@ HRESULT Rocket::init(void)
     _flame->init("Resources/Flame.bmp", &_x, &_y);
     _missileM1 = new MissileM1;
     _missileM1->init(10, 500);
+	//_spreadMissile = new
     _Weapon = _missileM1;
 
     //spRocket.push_back(std::shared_ptr<Rocket>(new Rocket));

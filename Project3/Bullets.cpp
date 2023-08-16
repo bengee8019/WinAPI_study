@@ -181,3 +181,59 @@ void MissileM1::move(void)
 		}
 	}
 }
+
+void SpreadMissile::fire(float x, float y)
+{
+	if (_bulletMax <= _vBullet.size()) return;
+	for (int i = 0; i < 3; i++)
+	{
+		tagBullet bullet;
+		ZeroMemory(&bullet, sizeof(tagBullet));
+
+		bullet.img = new GImage;
+		bullet.img->init("Resources/Missile.bmp", 416, 64, 13, 1, true, RGB(255, 0, 255));
+		bullet.speed = 5.0f;
+		bullet.x = bullet.fireX = x;
+		bullet.y = bullet.fireY = y;
+		bullet.rc = RectMakeCenter(bullet.x, bullet.y, bullet.img->getFrameWidth(), bullet.img->getFrameHeight());
+		angle = (i - 1) * 15;
+		_vBullet.push_back(bullet);
+	}
+
+}
+
+void SpreadMissile::move(void)
+{
+	for (_viBullet = _vBullet.begin(); _viBullet != _vBullet.end();)
+	{
+		if (BULLET_COUNT + _BulletTick <= GetTickCount())
+		{
+			_BulletTick = GetTickCount();
+			_viBullet->img->setFrameX(_viBullet->img->getFrameX() + 1);
+
+			if (_viBullet->img->getFrameX() >= _viBullet->img->getMaxFrameX())
+			{
+				_viBullet->img->setFrameX(0);
+			}
+		}
+		_viBullet->y -= _viBullet->speed;
+		_viBullet->rc = RectMakeCenter(_viBullet->x, _viBullet->y, _viBullet->img->getFrameWidth(), _viBullet->img->getFrameHeight());
+		if (MY_UTIL::getDistance(_viBullet->fireX, _viBullet->fireY, _viBullet->x, _viBullet->y) >= _range)
+		{
+			SAFE_DELETE(_viBullet->img);
+			_viBullet = _vBullet.erase(_viBullet);
+		}
+		else
+		{
+			_viBullet++;
+		}
+	}
+}
+
+SpreadMissile::SpreadMissile()
+{
+}
+
+SpreadMissile::~SpreadMissile()
+{
+}

@@ -52,7 +52,10 @@ void EnemyManager::render(void)
 void EnemyManager::setMinion()
 {
 	setNormalMinion(120, 50, 10, 5, 1200, 400);
-	setSpinMinion(WINSIZE_X / 2, 400, 12, 300);
+	setSpinMinion(WINSIZE_X / 2, 400, 10, 500);
+	setSpinMinion(WINSIZE_X / 2, 400, 10, 400);
+	setSpinMinion(WINSIZE_X / 2, 400, 10, 300);
+	setSpinMinion(WINSIZE_X / 2, 400, 10, 200);
 	setWaveMinion(0, 100, 10, 3, WINSIZE_X+100, 400);
 	setEclipseMinion(WINSIZE_X / 2, 100, 60.0f, 1, 800);
 }

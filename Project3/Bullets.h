@@ -51,7 +51,7 @@ public:
 //발사가 될 때마다 만들고 삭제
 class MissileM1 : public GameNode
 {
-private:
+protected:
 	vector<tagBullet> _vBullet;
 	vector<tagBullet>::iterator _viBullet;
 
@@ -65,15 +65,28 @@ public:
 	void render();
 	void release();
 
-	void fire(float x, float y);
+	virtual void fire(float x, float y);
 	void draw(void);
-	void move(void);
+	virtual void move(void);
 
 	MissileM1() {}
 	~MissileM1() {}
 };
 
+class SpreadMissile : public MissileM1
+{
+private:
+	int MissileIndex;
+	float angle;
+public:
 
+	void fire(float x, float y);
+	void move(void);
+
+	SpreadMissile();
+	~SpreadMissile();
+
+};
 //
 //class Bullets
 //{
