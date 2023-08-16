@@ -87,7 +87,6 @@ void EclipseMinion::move(void)
 	_angle += _aSpd;
 	_x = originPoint.x + _lRadius * cosf(_angle) - _sRadius * sinf(_angle);
 	_y = originPoint.y + _lRadius * cosf(_angle) + _sRadius * sinf(_angle);
-	cout << _angle << endl;
 }
 
 EclipseMinion::EclipseMinion(): originPoint({ 400 ,0 }), _angle(0.0f), _lRadius(800), _sRadius(200), _aSpd(2 * PI / 180)

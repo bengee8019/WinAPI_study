@@ -16,7 +16,10 @@ HRESULT Rocket::init(void)
     _flame->init("Resources/Flame.bmp", &_x, &_y);
     _missileM1 = new MissileM1;
     _missileM1->init(10, 500);
-	//_spreadMissile = new
+	_spreadMissile = new SpreadMissile;
+	_spreadMissile->init(30, 500);
+	_miniRocket = new MiniRocket;
+	_miniRocket->init(10, 800);
     _Weapon = _missileM1;
 
     //spRocket.push_back(std::shared_ptr<Rocket>(new Rocket));
@@ -52,7 +55,7 @@ void Rocket::update(void)
     if (KEYMANAGER->isOnceKeyDown(VK_SPACE))
     {
         //_missile.fire(_x,_y);
-        _missileM1->fire(_x+10, _y-60);
+        _Weapon->fire(_x+10, _y-60);
     }
     _flame->update();
     //_missile.update();
@@ -76,10 +79,11 @@ void Rocket::WeaponChange()
     }
     if (KEYMANAGER->isOnceKeyDown(VK_F2))
     {
-
+		_Weapon = _spreadMissile;
     }
     if (KEYMANAGER->isOnceKeyDown(VK_F3))
     {
+		_Weapon = _miniRocket;
     }
     if (KEYMANAGER->isOnceKeyDown(VK_F4))
     {

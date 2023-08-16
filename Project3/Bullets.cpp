@@ -10,14 +10,11 @@ HRESULT Missile::init(int bulletMax, float range)
 	{
 		tagBullet bullet;
 		//ZeroMemory vs memset
-
 		ZeroMemory(&bullet, sizeof(tagBullet));
-
 		bullet.img = new GImage;
 		bullet.img->init("Resources/Missile.bmp",416,64,13,1,true,RGB(255,0,255));
 		bullet.fire = false;
 		bullet.speed = 5.0f;
-
 		_vBullet.push_back(bullet);
 	}
 	_BulletTick = 7.0f;
@@ -196,10 +193,9 @@ void SpreadMissile::fire(float x, float y)
 		bullet.x = bullet.fireX = x;
 		bullet.y = bullet.fireY = y;
 		bullet.rc = RectMakeCenter(bullet.x, bullet.y, bullet.img->getFrameWidth(), bullet.img->getFrameHeight());
-		angle = (i - 1) * 15;
+		bullet.angle = (i - 1) * 15 + 90;
 		_vBullet.push_back(bullet);
 	}
-
 }
 
 void SpreadMissile::move(void)
@@ -216,7 +212,8 @@ void SpreadMissile::move(void)
 				_viBullet->img->setFrameX(0);
 			}
 		}
-		_viBullet->y -= _viBullet->speed;
+		_viBullet->x += _viBullet->speed * cosf(DEG_TO_RAD * _viBullet->angle);
+		_viBullet->y -= _viBullet->speed * sinf(DEG_TO_RAD * _viBullet->angle);
 		_viBullet->rc = RectMakeCenter(_viBullet->x, _viBullet->y, _viBullet->img->getFrameWidth(), _viBullet->img->getFrameHeight());
 		if (MY_UTIL::getDistance(_viBullet->fireX, _viBullet->fireY, _viBullet->x, _viBullet->y) >= _range)
 		{
@@ -235,5 +232,62 @@ SpreadMissile::SpreadMissile()
 }
 
 SpreadMissile::~SpreadMissile()
+{
+}
+
+void MiniRocket::fire(float x, float y)
+{
+	if (_bulletMax <= _vBullet.size()) return;
+	tagBullet bullet;
+	ZeroMemory(&bullet, sizeof(tagBullet));
+
+	bullet.count = 0;
+	bullet.img = new GImage;
+	bullet.img->init("Resources/MiniRocket.bmp", 30, 39, 1, 1, true, RGB(255, 0, 255));
+	bullet.speed = 2.0f;
+	bullet.x = bullet.fireX = x;
+	bullet.y = bullet.fireY = y;
+	bullet.rc = RectMakeCenter(bullet.x, bullet.y, bullet.img->getFrameWidth(), bullet.img->getFrameHeight());
+	_vBullet.push_back(bullet);
+
+}
+
+void MiniRocket::move(void)
+{
+	for (_viBullet = _vBullet.begin(); _viBullet != _vBullet.end();)
+	{
+		if (BULLET_COUNT + _BulletTick <= GetTickCount())
+		{
+			_BulletTick = GetTickCount();
+			_viBullet->img->setFrameX(_viBullet->img->getFrameX() + 1);
+
+			if (_viBullet->img->getFrameX() >= _viBullet->img->getMaxFrameX())
+			{
+				_viBullet->img->setFrameX(0);
+			}
+		}
+		_viBullet->count++;
+		_viBullet->y -= _viBullet->speed * _viBullet->count;
+
+		_viBullet->rc = RectMakeCenter(_viBullet->x, _viBullet->y, _viBullet->img->getFrameWidth(), _viBullet->img->getFrameHeight());
+		if (MY_UTIL::getDistance(_viBullet->fireX, _viBullet->fireY, _viBullet->x, _viBullet->y) >= _range)
+		{
+			SAFE_DELETE(_viBullet->img);
+			_viBullet = _vBullet.erase(_viBullet);
+		}
+		else
+		{
+			_viBullet++;
+		}
+	}
+
+
+}
+
+MiniRocket::MiniRocket()
+{
+}
+
+MiniRocket::~MiniRocket()
 {
 }

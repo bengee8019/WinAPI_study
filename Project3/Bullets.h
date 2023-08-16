@@ -66,7 +66,7 @@ public:
 	void release();
 
 	virtual void fire(float x, float y);
-	void draw(void);
+	virtual void draw(void);
 	virtual void move(void);
 
 	MissileM1() {}
@@ -76,8 +76,6 @@ public:
 class SpreadMissile : public MissileM1
 {
 private:
-	int MissileIndex;
-	float angle;
 public:
 
 	void fire(float x, float y);
@@ -85,14 +83,16 @@ public:
 
 	SpreadMissile();
 	~SpreadMissile();
-
 };
-//
-//class Bullets
-//{
-//
-//public:
-//	Bullets();
-//	~Bullets();
-//};
-//
+
+class MiniRocket : public MissileM1
+{
+private:
+public:
+
+	void fire(float x, float y);
+	void move(void);
+
+	MiniRocket();
+	~MiniRocket();
+};

@@ -63,6 +63,8 @@ private:
 	Flame* _flame;
 	MissileM1* _Weapon;
 	MissileM1* _missileM1;
+	MissileM1* _spreadMissile;
+	MissileM1* _miniRocket;
 
 	//GImage* objectData;
 	//Flame* (*pfFlame) (void);
