@@ -29,6 +29,7 @@ public:
 	void animation(void);
 	float getX() { return _x; }
 	float getY() { return _y; }
+	RECT getRC() { return _rc; }
 
 	Enemy(void);
 	~Enemy(void);

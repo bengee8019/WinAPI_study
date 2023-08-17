@@ -20,6 +20,8 @@ struct tagBullet
 	bool fire;
 
 };
+typedef vector<tagBullet> vBullet;
+typedef vector<tagBullet>::iterator iterBullet;
 
 //객체로 정의한다.
 
@@ -55,6 +57,7 @@ private:
 	vector<tagBullet> _vBullet;
 	vector<tagBullet>::iterator _viBullet;
 
+	typedef vector<tagBullet> vBullet;
 	typedef vector<tagBullet>::iterator iterBullet;
 
 	float _range;

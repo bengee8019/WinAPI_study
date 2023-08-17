@@ -2,13 +2,11 @@
 #include "GameNode.h"
 #include "Enemy.h"
 
+typedef vector<Enemy*> vEnemy;
+typedef vector<Enemy*>::iterator viEnemy;
 
 class EnemyManager : public GameNode
 {
-private:
-	typedef vector<Enemy*> vEnemy;
-	typedef vector<Enemy*>::iterator viEnemy;
-
 private:
 	vEnemy _vMinion;
 	viEnemy _viMinion;
