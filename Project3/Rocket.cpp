@@ -22,6 +22,10 @@ HRESULT Rocket::init(void)
 	_miniRocket->init(10, 800);
     _Weapon = _missileM1;
 
+	_beam = new Beam;
+	_beam->init(1, 0.5);
+	_beamIrradiation = false;
+
     //spRocket.push_back(std::shared_ptr<Rocket>(new Rocket));
     return S_OK;
 }
@@ -29,24 +33,26 @@ HRESULT Rocket::init(void)
 void Rocket::release(void)
 {
     //SAFE_DELETE(_flame);
+	_beam->release();
+	SAFE_DELETE(_beam);
 }
 
 void Rocket::update(void)
 {
     WeaponChange();
-    if (KEYMANAGER->isStayKeyDown(VK_LEFT)&&_rc.left > 0)
+    if (KEYMANAGER->isStayKeyDown(VK_LEFT)&&_rc.left > 0 && _beamIrradiation==false)
     {
         _x -= ROCKET_SPEED;
     }
-    if (KEYMANAGER->isStayKeyDown(VK_RIGHT) && _rc.right < WINSIZE_X)
+    if (KEYMANAGER->isStayKeyDown(VK_RIGHT) && _rc.right < WINSIZE_X&& _beamIrradiation==false)
     {
         _x += ROCKET_SPEED;
     }
-    if (KEYMANAGER->isStayKeyDown(VK_UP) && _rc.top > 0)
+    if (KEYMANAGER->isStayKeyDown(VK_UP) && _rc.top > 0 && _beamIrradiation == false)
     {
         _y -= ROCKET_SPEED;
     }
-    if (KEYMANAGER->isStayKeyDown(VK_DOWN) && _rc.bottom < WINSIZE_Y)
+    if (KEYMANAGER->isStayKeyDown(VK_DOWN) && _rc.bottom < WINSIZE_Y && _beamIrradiation == false)
     {
         _y += ROCKET_SPEED;
     }
@@ -57,10 +63,41 @@ void Rocket::update(void)
         //_missile.fire(_x,_y);
         _Weapon->fire(_x+10, _y-60);
     }
+
+	if (KEYMANAGER->isOnceKeyDown(VK_F7))
+	{
+		_setWeapon = MISSILE;
+	}
+	if (KEYMANAGER->isOnceKeyDown(VK_F6))
+	{
+		_setWeapon = BEAM;
+	}
+
+	switch (_setWeapon)
+	{
+	case BEAM:
+	{
+		if (KEYMANAGER->isOnceKeyDown(VK_SPACE))
+		{
+			_beamIrradiation = true;
+			_beam->fire(_x, _y - 430);
+		}
+		else _beamIrradiation = false;
+		break;
+	}
+	case MISSILE:
+	{
+		if (KEYMANAGER->isOnceKeyDown(VK_SPACE))
+		{
+			_Weapon->fire(_x, _y - 430);
+		}
+		break;
+	}
+	}
     _flame->update();
     //_missile.update();
     _Weapon->update();
-
+	_beam->update();
 }
 
 void Rocket::render(void)
@@ -69,6 +106,7 @@ void Rocket::render(void)
     _flame->render();
     //_missile.render();
     _Weapon->render();
+	_beam->render();
 }
 
 void Rocket::WeaponChange()

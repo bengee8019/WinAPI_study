@@ -1,6 +1,8 @@
 #pragma once
 #include "SingletonBase.h"
 
+
+
 class RandomFunction : public SingletonBase <RandomFunction>
 {
 public:

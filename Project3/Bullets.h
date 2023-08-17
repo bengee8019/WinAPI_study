@@ -48,6 +48,34 @@ public:
 	~Missile() {}
 };
 
+class Beam : public GameNode
+{
+private:
+	// 언제 삭제될지 명확하지 않기 때문에 stl vector 가 적합하다.
+	vector<tagBullet> _vBullet;
+	vector<tagBullet>::iterator _viBullet;
+
+	typedef vector<tagBullet>::iterator iterBullet;
+
+	float _range;
+	int _bulletMax;
+	float _BulletTick;
+
+public:
+	HRESULT init(int bulletMax, float range);
+	void update();
+	void render();
+	void release();
+
+	void fire(float x, float y);
+	void draw(void);
+	void move(void);
+
+	Beam() {}
+	~Beam() {}
+};
+
+
 //발사가 될 때마다 만들고 삭제
 class MissileM1 : public GameNode
 {
@@ -97,15 +125,15 @@ public:
 	~MiniRocket();
 };
 
-class TrackerMissile : public MissileM1
-{
-private:
-public:
-
-	void fire(float x, float y);
-	void move(void);
-	float findEnemy()
-
-	TrackerMissile();
-	~TrackerMissile();
-};
+//class TrackerMissile : public MissileM1
+//{
+//private:
+//public:
+//
+//	void fire(float x, float y);
+//	void move(void);
+//	float findEnemy()
+//
+//	TrackerMissile();
+//	~TrackerMissile();
+//};

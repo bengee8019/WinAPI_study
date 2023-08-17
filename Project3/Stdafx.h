@@ -36,9 +36,11 @@
 
 //! 라이브러리 추가
 #pragma comment (lib, "msimg32.lib")
+#pragma comment(lib, "winmm.lib")
 
 //! Windows 헤더 파일
 #include <windows.h>
+
 
 
 //! C 런타임 헤더 파일입니다.
@@ -78,6 +80,7 @@
 #include <stdio.h>
 //! C++ 런타임 헤더 파일
 #include <time.h>
+#include <ctime>
 #include <iostream>
 /*
 - c++11에서 추가된 시간 관련 라이브러리 (STL)
@@ -102,6 +105,13 @@
 //reset,set,flip,all,any,size 등등..
 #include <bitset> //STL //bool 시리즈모음
 #include <windef.h>
+//람다 친구들
+#include<algorithm>
+//함수 포인터
+//ㄴ bind: 특정 인자에 대해서만 함수를 실행시키고 싶을 때, 특정 인자와 특정 함수를 묶어줄 때
+//ㄴ 함수 포인터 -> 이벤트-> 트리거-> 델리게이트(콜백) (매크로 발생해야 함)-> 액션 트리거 / 관찰자 패턴
+#include <functional>
+
 
 #define _USE_MATH_DEFINES
 #include <math.h>
@@ -149,6 +159,7 @@ Inline 함수
 #include "Utils.h"
 //
 #include <memory>
+#include <mmsystem.h>
 
 using namespace MY_UTIL;
 

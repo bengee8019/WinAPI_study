@@ -116,15 +116,17 @@ void EnemyManager::setEclipseMinion(int x, int y, float aRange, int num, int rad
 		jellyFish->init("ÇØÆÄ¸®", PointMake(x + radius * cosf(DEG_TO_RAD * tmpAngle * i), y + radius * sinf(DEG_TO_RAD * tmpAngle * i)));
 		_vMinion.push_back(jellyFish);
 	}
+	
 }
+//
+//POINT EnemyManager::findTargetPoint(POINT& pt)
+//{
+//	int tmpDist = 1000;
+//	for (_viMinion = _vMinion.begin(); _viMinion != _vMinion.end(); ++_viMinion)
+//	{
+//		tmpDist = MY_UTIL::getDistance(pt.x, pt.y, (*_viMinion)->getX(), (*_viMinion)->getY());
+//	}
+//
+//	return POINT();
+//}
 
-POINT EnemyManager::getTracePoint(POINT pt)
-{
-	int tmpDist = 1000;
-	for (_viMinion = _vMinion.begin(); _viMinion != _vMinion.end(); ++_viMinion)
-	{
-		tmpDist = MY_UTIL::getDistance(pt.x, pt.y, (*_viMinion)->getX(), (*_viMinion)->getY());
-	}
-
-	return POINT();
-}
