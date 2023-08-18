@@ -20,8 +20,8 @@ struct tagBullet
 	bool fire;
 
 };
-typedef vector<tagBullet> vBullet;
-typedef vector<tagBullet>::iterator iterBullet;
+//typedef vector<tagBullet> vBullet;
+//typedef vector<tagBullet>::iterator iterBullet;
 
 //객체로 정의한다.
 
@@ -45,6 +45,10 @@ public:
 	void fire(float x, float y);
 	void draw(void);
 	void move(void);
+
+	vector<tagBullet> getBullet(void){ return _vBullet; }
+	void removeBullet(int arrNum);
+
 
 	Missile() {}
 	~Missile() {}
@@ -74,6 +78,8 @@ public:
 	void draw(void);
 	void move(void);
 
+	vector<tagBullet> getBullet(void) { return _vBullet; }
+
 	Beam() {}
 	~Beam() {}
 };
@@ -95,6 +101,10 @@ public:
 	void update();
 	void render();
 	void release();
+
+	vector<tagBullet> getBullet(void) { return _vBullet; }
+	void removeBullet(int arrNum);
+
 
 	virtual void fire(float x, float y);
 	virtual void draw(void);

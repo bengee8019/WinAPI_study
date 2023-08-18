@@ -94,6 +94,13 @@ void Missile::move(void)
 	}
 }
 
+void Missile::removeBullet(int arrNum)
+{
+	SAFE_DELETE(_vBullet[arrNum].img);
+
+	_vBullet.erase(_vBullet.begin() + arrNum);
+}
+
 //==============================================================
 
 HRESULT MissileM1::init(int bulletMax, float range)
@@ -178,6 +185,15 @@ void MissileM1::move(void)
 		}
 	}
 }
+
+void MissileM1::removeBullet(int arrNum)
+{
+ 	SAFE_DELETE(_vBullet[arrNum].img);
+
+	_vBullet.erase(_vBullet.begin() + arrNum);
+}
+
+
 
 void SpreadMissile::fire(float x, float y)
 {

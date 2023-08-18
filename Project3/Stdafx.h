@@ -154,6 +154,8 @@ Inline ÇÔ¼ö
 #include "KeyManager.h"
 #include "ImageManager.h"
 #include "FontManager.h"
+//#include "CollisionManager.h"
+#include "TimeManager.h"
 //#include "TempSoundManager.h"
 //#include "ItemManager.h"
 #include "Utils.h"
@@ -168,6 +170,9 @@ using namespace MY_UTIL;
 #define KEYMANAGER KeyManager::getSingleton()
 #define IMAGEMANAGER ImageManager::getSingleton()
 #define FONTMANAGER FontManager::getSingleton()
+//#define COLISIONMANAGER CollisionManager::getSingleton()
+#define TIMEMANAGER TimeManager::getSingleton()
+
 //#define SOUNDMANAGER TempSoundManager::getSingleton()
 //#define ITEMMANAGER ItemManager::getSingleton()
 

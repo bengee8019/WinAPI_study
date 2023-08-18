@@ -46,6 +46,9 @@
     <Filter Include="Memo">
       <UniqueIdentifier>{bda7f3a0-fea9-4e7d-8228-93f6d6b7ccf6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\ShootingGame\Timer">
+      <UniqueIdentifier>{c8ed7251-8352-434d-922c-74c92cb8025e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GImage.h">
@@ -105,14 +108,14 @@
     <ClInclude Include="Bullets.h">
       <Filter>소스 파일\ShootingGame\Bullets</Filter>
     </ClInclude>
-    <ClInclude Include="TimeManager.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="Timer.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>소스 파일\ShootingGame\Timer</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeManager.h">
+      <Filter>소스 파일\core\manager</Filter>
     </ClInclude>
     <ClInclude Include="CollisionManager.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>소스 파일\core\manager</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -165,14 +168,17 @@
     <ClCompile Include="Bullets.cpp">
       <Filter>소스 파일\ShootingGame\Bullets</Filter>
     </ClCompile>
-    <ClCompile Include="TimeManager.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="Timer.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\ShootingGame\Timer</Filter>
+    </ClCompile>
+    <ClCompile Include="TimeManager.cpp">
+      <Filter>소스 파일\core\manager</Filter>
     </ClCompile>
     <ClCompile Include="CollisionManager.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\core\manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Colision.cpp">
+      <Filter>소스 파일\ShootingGame</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -183,6 +189,9 @@
       <Filter>Memo</Filter>
     </Text>
     <Text Include="기능 배분.txt">
+      <Filter>Memo</Filter>
+    </Text>
+    <Text Include="todolist.txt">
       <Filter>Memo</Filter>
     </Text>
   </ItemGroup>

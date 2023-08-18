@@ -65,6 +65,34 @@ int APIENTRY WinMain(_In_ HINSTANCE hInstance,
 	MSG message;
 	//ZeroMemory(&message, sizeof(message));
 
+	while (true)
+	{
+		if (PeekMessage(&message, NULL, 0, 0, PM_REMOVE))
+		{
+			if (message.message == WM_QUIT) break;
+			TranslateMessage(&message);
+			DispatchMessage(&message);
+		}
+
+		else
+		{
+			TIMEMANAGER->update(60.0f);
+			_gm->update();
+			_gm->render();
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
 	while (GetMessage(&message, nullptr, 0, 0))
 	{
 		TranslateMessage(&message);

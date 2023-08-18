@@ -15,12 +15,15 @@ private:
 	TileMap* _tileMap;
 	EnemyManager* _em;
 
+
 public:
 
 	HRESULT init();
 	void update();
 	void render();
 	void release();
+
+	virtual void collision(void);
 
 	maingame() {}
 	~maingame() {}

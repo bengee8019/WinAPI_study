@@ -7,6 +7,12 @@
 //헤더는 싹 복사과정을 필요로 한다. 
 
 
+void EnemyManager::removeMinion(int arrNum)
+{
+	SAFE_DELETE(_vMinion[arrNum]);
+	_vMinion.erase(_vMinion.begin() + arrNum);
+}
+
 EnemyManager::EnemyManager()
 {
 }

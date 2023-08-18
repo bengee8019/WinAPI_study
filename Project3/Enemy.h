@@ -27,6 +27,9 @@ public:
 	virtual void move(void);
 	void draw(void);
 	void animation(void);
+
+	RECT getRect(void) { return _rc; }
+
 	float getX() { return _x; }
 	float getY() { return _y; }
 	RECT getRC() { return _rc; }

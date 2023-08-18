@@ -26,7 +26,9 @@ public:
 	//
 	//std::function<POINT(const POINT&)> fpFindTarget = findTargetPoint;
 
+	void removeMinion(int arrNum);
 
+	vector<Enemy*> getMinions(void) { return _vMinion; }
 
 	EnemyManager();
 	~EnemyManager();

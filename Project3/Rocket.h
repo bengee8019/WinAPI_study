@@ -86,6 +86,10 @@ public:
 	void release(void);
 	void update(void);
 	void render(void);
+	void removeMissile(int arrNum);
+
+	MissileM1* getMissile(void) { return _Weapon; }
+	Beam* getBeam(void) { return _beam; }
 	void WeaponChange();
 	//POINT* 
 	//포인터를 공유한다 -> 소유권 문제 발생할 수 있다. 
