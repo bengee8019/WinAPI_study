@@ -102,9 +102,9 @@ public:
 	void render();
 	void release();
 
-	vector<tagBullet> getBullet(void) { return _vBullet; }
+	virtual vector<tagBullet> getBullet(void) { return _vBullet; }
 	void removeBullet(int arrNum);
-
+	void clearBullet();
 
 	virtual void fire(float x, float y);
 	virtual void draw(void);

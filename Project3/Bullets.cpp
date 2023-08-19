@@ -188,9 +188,18 @@ void MissileM1::move(void)
 
 void MissileM1::removeBullet(int arrNum)
 {
- 	SAFE_DELETE(_vBullet[arrNum].img);
+ 	//SAFE_DELETE(_vBullet[arrNum].img);
 
 	_vBullet.erase(_vBullet.begin() + arrNum);
+}
+
+void MissileM1::clearBullet()
+{
+	for (_viBullet = _vBullet.begin(); _viBullet != _vBullet.end();)
+	{
+		SAFE_DELETE(_viBullet->img);
+		_viBullet = _vBullet.erase(_viBullet);
+	}
 }
 
 

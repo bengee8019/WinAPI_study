@@ -11,6 +11,7 @@ void Minion::move(void)
 	if (_switch)
 	{
 		_x += 3;
+		_rc = RectMakeCenter(_x, _y, 60, 47);
 	}
 	else
 	{
@@ -51,6 +52,7 @@ void SpinMinion::move(void)
 	_angle += _aSpd;
 	_x = originPoint.x + _dist * cosf(_angle);
 	_y = originPoint.y + _dist * sinf(_angle);
+	_rc = RectMakeCenter(_x, _y, 60, 47);
 }
 
 SpinMinion::SpinMinion() : originPoint({ WINSIZE_X / 2 ,400 }), _aSpd(2 * PI / 360), _rSpd(3.0f), _tmpSwitch(true)
@@ -71,6 +73,7 @@ void WaveMinion::move(void)
 	_angle += _aSpd;
 	_x += _spd;
 	_y += _magnitude * sinf(_angle);
+	_rc = RectMakeCenter(_x, _y, 60, 47);
 }
 
 WaveMinion::WaveMinion() : _magnitude(5), _angle(0.0f), _aSpd(2 * PI / 180), _spd(5)
@@ -87,6 +90,7 @@ void EclipseMinion::move(void)
 	_angle += _aSpd;
 	_x = originPoint.x + _lRadius * cosf(_angle) - _sRadius * sinf(_angle);
 	_y = originPoint.y + _lRadius * cosf(_angle) + _sRadius * sinf(_angle);
+	_rc = RectMakeCenter(_x, _y, 60, 47);
 }
 
 EclipseMinion::EclipseMinion(): originPoint({ 400 ,0 }), _angle(0.0f), _lRadius(800), _sRadius(200), _aSpd(2 * PI / 180)

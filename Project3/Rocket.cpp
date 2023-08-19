@@ -7,7 +7,7 @@ HRESULT Rocket::init(void)
 
     _image = IMAGEMANAGER->addImage("·ÎÄÏ","Resources/Rocket.bmp", 52, 64, true, RGB(255, 0, 255));
 	
-	_setWeapon = MISSILE;
+	//_setWeapon = MISSILE;
 
     _x = WINSIZE_X / 2;
     _y = 800;
@@ -16,8 +16,9 @@ HRESULT Rocket::init(void)
 
     _flame = new Flame;
     _flame->init("Resources/Flame.bmp", &_x, &_y);
-    _Weapon = new MissileM1;
-	_Weapon->init(10,500);
+    _missileM1 = new MissileM1;
+    _missileM1->init(10, 500);
+    _Weapon = _missileM1;
 
 	_beam = new Beam;
 	_beam->init(1, 0.5);
@@ -61,11 +62,11 @@ void Rocket::update(void)
         _Weapon->fire(_x+10, _y-60);
     }
 
-	if (KEYMANAGER->isOnceKeyDown(VK_F7))
+	if (KEYMANAGER->isOnceKeyDown(VK_F6))
 	{
 		_setWeapon = MISSILE;
 	}
-	if (KEYMANAGER->isOnceKeyDown(VK_F6))
+	if (KEYMANAGER->isOnceKeyDown(VK_F7))
 	{
 		_setWeapon = BEAM;
 	}
@@ -108,26 +109,27 @@ void Rocket::render(void)
 
 void Rocket::removeMissile(int arrNum)
 {
-	_missileM1->removeBullet(arrNum);
+    SAFE_DELETE(_Weapon->getBullet()[arrNum].img);
+	_Weapon->removeBullet(arrNum);
 }
 
 void Rocket::WeaponChange()
 {
     if (KEYMANAGER->isOnceKeyDown(VK_F1))
     {
-		SAFE_DELETE(_Weapon);
+        _Weapon->clearBullet();
 		_Weapon = new MissileM1; 
 		_Weapon->init(10, 500);
     }
     if (KEYMANAGER->isOnceKeyDown(VK_F2))
     {
-		SAFE_DELETE(_Weapon);
+        _Weapon->clearBullet();
 		_Weapon = new SpreadMissile;
 		_Weapon->init(30, 500);
     }
     if (KEYMANAGER->isOnceKeyDown(VK_F3))
     {
-		SAFE_DELETE(_Weapon);
+        _Weapon->clearBullet();
 		_Weapon = new MiniRocket;
 		_Weapon->init(10, 800);
     }
