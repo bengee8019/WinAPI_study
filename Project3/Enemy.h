@@ -15,6 +15,8 @@ protected:
 	float _rndTimeCount;
 	float _worldTimeCount;
 
+	int _shotCooldown;
+
 public:
 	HRESULT init(void);
 	HRESULT init(const char* imageName, POINT position);
@@ -26,6 +28,7 @@ public:
 
 	virtual void move(void);
 	void draw(void);
+	void shoot(void);
 	void animation(void);
 
 	RECT getRect(void) { return _rc; }

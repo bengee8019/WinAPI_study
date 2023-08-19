@@ -16,7 +16,9 @@ void GameManager::collision(void)
 				&CollisionAreaResizing(_em->getMinions()[j]->getRect(),40,30)))
 			{
 				_rocket->removeMissile(i);
+				_em->addHitRenderer(j);
 				_em->removeMinion(j);
+				
 				break;
 			}
 		}
@@ -32,6 +34,7 @@ void GameManager::collision(void)
 				&CollisionAreaResizing(_em->getMinions()[j]->getRect(), 40, 30)))
 
 			{
+				_em->addHitRenderer(j);
 				_em->removeMinion(j);
 				break;
 			}

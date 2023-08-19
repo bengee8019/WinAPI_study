@@ -7,6 +7,14 @@
 //헤더는 싹 복사과정을 필요로 한다. 
 
 
+//벡터에 렌더러 객체 pushback
+void EnemyManager::addHitRenderer(int arrNum)
+{
+	hitRenderer* tmpHitRenderer = new hitRenderer;
+	tmpHitRenderer->init(_vMinion[arrNum]->getX(), _vMinion[arrNum]->getY());
+	_vHitRenderer.push_back(tmpHitRenderer);
+}
+
 void EnemyManager::removeMinion(int arrNum)
 {
 	SAFE_DELETE(_vMinion[arrNum]);
@@ -24,6 +32,8 @@ EnemyManager::~EnemyManager()
 HRESULT EnemyManager::init(void)
 {
 	IMAGEMANAGER->addFrameImage("해파리","Resources/JellyFish.bmp", 0.0f, 0.0f, 1140 , 47 , 19 , 1 , true, RGB(255, 0, 255));
+	IMAGEMANAGER->addFrameImage("히트", "Resources/hitFrame.bmp", 570, 219, 3, 1, true, RGB(255, 0, 255));
+	IMAGEMANAGER->addImage("적총알", "Resources/bullet_laser.bmp", 120, 120, true, RGB(255, 0, 255));
 
 	setMinion();
 	return S_OK;
@@ -36,21 +46,45 @@ void EnemyManager::release(void)
 		(*_viMinion)->release();
 		SAFE_DELETE(*_viMinion);
 	}
+	for (_viHitRenderer = _vHitRenderer.begin(); _viHitRenderer != _vHitRenderer.end(); ++_viHitRenderer)
+	{
+		(*_viHitRenderer)->release();
+	}
 }
 
 void EnemyManager::update(void)
 {
+	//미니언 업데이트
 	for (_viMinion = _vMinion.begin(); _viMinion != _vMinion.end(); ++_viMinion)
 	{
 		(*_viMinion)->update();
+	}
+	//히트렌더러 업데이트
+	for (_viHitRenderer = _vHitRenderer.begin(); _viHitRenderer != _vHitRenderer.end();)
+	{
+		if (!(*_viHitRenderer)->getNowAnimate())
+		{
+			_viHitRenderer = _vHitRenderer.erase(_viHitRenderer);
+		}
+		else
+		{
+			(*_viHitRenderer)->update();
+			_viHitRenderer++;
+		}
 	}
 }
 
 void EnemyManager::render(void)
 {
+	//미니언 렌더
 	for (_viMinion = _vMinion.begin(); _viMinion != _vMinion.end(); ++_viMinion)
 	{
 		(*_viMinion)->render();
+	}
+	//히트 렌더러 렌더
+	for (_viHitRenderer = _vHitRenderer.begin(); _viHitRenderer != _vHitRenderer.end(); ++_viHitRenderer)
+	{
+		(*_viHitRenderer)->render(getMemDC());
 	}
 }
 

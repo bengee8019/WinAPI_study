@@ -27,7 +27,6 @@ public:
 	void move(void);
 	SpinMinion();
 	~SpinMinion();
-
 };
 
 class WaveMinion : public Enemy
@@ -42,7 +41,6 @@ public:
 	void move(void);
 	WaveMinion();
 	~WaveMinion();
-
 };
 
 class EclipseMinion : public Enemy
@@ -58,5 +56,4 @@ public:
 	void move(void);
 	EclipseMinion();
 	~EclipseMinion();
-
 };

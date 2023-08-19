@@ -40,6 +40,8 @@ HRESULT Enemy::init(const char* imageName, POINT position)
 	_y = (float)position.y;
 	_image = IMAGEMANAGER->findImage(imageName);
 	_rc = RectMakeCenter(_x, _y, 60, 47);
+	_shotCooldown = RND->getFromInTo(500, 2000);
+
 	return S_OK;
 }
 
@@ -69,6 +71,12 @@ void Enemy::draw(void)
 {
 	_image->frameRender(getMemDC(), _x - _image->getFrameWidth() / 2, _y - _image->getFrameHeight() / 2, _CurrentFrameX, _CurrentFrameY);
 }
+
+void Enemy::shoot(void)
+{
+
+}
+
 
 void Enemy::animation(void)
 {

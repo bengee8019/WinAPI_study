@@ -57,4 +57,5 @@ void maingame::release()
 	//_rocket->release();
 	_GN->release();
 	_em->release();
+	IMAGEMANAGER->deleteAll();
 }

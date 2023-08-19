@@ -1,15 +1,25 @@
 #pragma once
 #include "GameNode.h"
 #include "Enemy.h"
+#include "hitRenderer.h"
+#include "Bullets.h"
+
 
 typedef vector<Enemy*> vEnemy;
 typedef vector<Enemy*>::iterator viEnemy;
+
 
 class EnemyManager : public GameNode
 {
 private:
 	vEnemy _vMinion;
 	viEnemy _viMinion;
+
+	vector<hitRenderer*> _vHitRenderer;
+	vector<hitRenderer*>::iterator _viHitRenderer;
+
+	vector<MissileM1*> _vEBullet;
+	vector<MissileM1*>::iterator _viEBullet;
 
 public:
 	HRESULT init(void);
@@ -26,9 +36,12 @@ public:
 	//
 	//std::function<POINT(const POINT&)> fpFindTarget = findTargetPoint;
 
+	void addHitRenderer(int arrNum);
 	void removeMinion(int arrNum);
 
 	vector<Enemy*> getMinions(void) { return _vMinion; }
+
+
 
 	EnemyManager();
 	~EnemyManager();

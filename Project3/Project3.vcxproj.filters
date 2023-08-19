@@ -63,6 +63,9 @@
     <ClInclude Include="FontManager.h">
       <Filter>소스 파일\core\manager</Filter>
     </ClInclude>
+    <ClInclude Include="GameManager.h">
+      <Filter>소스 파일\core\manager</Filter>
+    </ClInclude>
     <ClInclude Include="ImageManager.h">
       <Filter>소스 파일\core\manager</Filter>
     </ClInclude>
@@ -114,7 +117,7 @@
     <ClInclude Include="CollisionManager.h">
       <Filter>소스 파일\core\manager</Filter>
     </ClInclude>
-    <ClInclude Include="GameManager.h">
+    <ClInclude Include="hitRenderer.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
@@ -126,6 +129,9 @@
       <Filter>소스 파일\core</Filter>
     </ClCompile>
     <ClCompile Include="FontManager.cpp">
+      <Filter>소스 파일\core\manager</Filter>
+    </ClCompile>
+    <ClCompile Include="GameManager.cpp">
       <Filter>소스 파일\core\manager</Filter>
     </ClCompile>
     <ClCompile Include="GImage.cpp">
@@ -177,7 +183,9 @@
     <ClCompile Include="Colision.cpp">
       <Filter>소스 파일\ShootingGame</Filter>
     </ClCompile>
-    <ClCompile Include="GameManager.cpp" />
+    <ClCompile Include="hitRenderer.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="CordingInterview\Question.txt">

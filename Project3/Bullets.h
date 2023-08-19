@@ -20,8 +20,8 @@ struct tagBullet
 	bool fire;
 
 };
-//typedef vector<tagBullet> vBullet;
-//typedef vector<tagBullet>::iterator iterBullet;
+typedef vector<tagBullet> vBullet;
+typedef vector<tagBullet>::iterator iterBullet;
 
 //객체로 정의한다.
 
