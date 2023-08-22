@@ -144,6 +144,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Animation.h" />
+    <ClInclude Include="AniScene.h" />
     <ClInclude Include="Bullets.h" />
     <ClInclude Include="CollisionManager.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
@@ -153,7 +155,9 @@
     <ClInclude Include="EnemyManager.h" />
     <ClInclude Include="Flame.h" />
     <ClInclude Include="FontManager.h" />
-    <ClInclude Include="GameManager.h" />
+    <ClInclude Include="GameManager.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="GameNode.h" />
     <ClInclude Include="GImage.h" />
     <ClInclude Include="hitRenderer.h" />
@@ -163,6 +167,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClInclude>
     <ClInclude Include="Minion.h" />
+    <ClInclude Include="ProgressBar.h" />
     <ClInclude Include="RandomFunction.h" />
     <ClInclude Include="Rocket.h" />
     <ClInclude Include="SingletonBase.h" />
@@ -173,6 +178,8 @@
     <ClInclude Include="Utils.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Animation.cpp" />
+    <ClCompile Include="AniScene.cpp" />
     <ClCompile Include="Bullets.cpp" />
     <ClCompile Include="Colision.cpp" />
     <ClCompile Include="CollisionManager.cpp">
@@ -182,7 +189,9 @@
     <ClCompile Include="EnemyManager.cpp" />
     <ClCompile Include="Flame.cpp" />
     <ClCompile Include="FontManager.cpp" />
-    <ClCompile Include="GameManager.cpp" />
+    <ClCompile Include="GameManager.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="GameNode.cpp" />
     <ClCompile Include="GImage.cpp" />
     <ClCompile Include="hitRenderer.cpp" />
@@ -192,6 +201,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="Minion.cpp" />
+    <ClCompile Include="ProgressBar.cpp" />
     <ClCompile Include="Rocket.cpp" />
     <ClCompile Include="Stdafx.cpp" />
     <ClCompile Include="TileMap.cpp" />

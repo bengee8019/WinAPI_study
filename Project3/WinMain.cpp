@@ -1,5 +1,5 @@
 #include "Stdafx.h"
-#include "GameManager.h"
+#include "maingame.h"
 
 HINSTANCE _hInstance;
 HWND _hWnd;
@@ -10,7 +10,7 @@ POINT _ptMouse = { 0,0 };
 LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
 void setWindowSize(int x, int y, int width, int height);
 
-GameManager* _gm;
+maingame* _gm;
 int centerX;
 int centerY;
 
@@ -19,7 +19,7 @@ int APIENTRY WinMain(_In_ HINSTANCE hInstance,
 	LPSTR _lpszCmdParam,
 	int nCmdShow)
 {
-	_gm = new GameManager();
+	_gm = new maingame();
 	_hInstance = hInstance;
 
 	WNDCLASS wndClass;

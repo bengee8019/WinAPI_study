@@ -1,4 +1,32 @@
 #pragma once
+
+class Animation;
+
+/*
+- 클래스 전방선언
+클래스가 있다는 것만 알려줌
+
+전방선언 + 전처리기문 -> #include
+
+is a 관계:
+상속 
+ex) 제네시스는 차다.
+차의 모든 정보가 필요하다. #include 복사해와서 사용
+
+has a 관계:
+ex) 제네시스는 바퀴를 가지고 있다.
+바퀴의 정보만 알면 된다-> 전방선언으로 바퀴가 있다는것만 알려주고 참조해서 사용.
+
+필요없는 #include -> 쓸데없는 컴파일 시간 연장.
+
+1. 클래스의 포인터, 참조 형식으로 이름만 사용할 경우.
+2. 매개변수나 리턴 타입을 위한 이름만 참조할 경우.
+
+## cpp에서 include과정을 필요로 한다.
+
+
+*/
+
 class GImage
 {
 public:
@@ -197,6 +225,9 @@ public:
 	void loopRender(HDC hdc, const LPRECT drawArea, int offsetX, int offsetY); //ex) 슈팅게임 배경, 러닝게임 배경 (활용하면 카메라구현가능)
 							//그려지는 영역
 	void loopAlphaRender(HDC hdc, const LPRECT drawArea, int offsetX, int offsetY, BYTE alpha);
+
+	void aniRender(HDC hdc, int destX, int destY, Animation* ani);
+
 
 	GImage();
 	~GImage() {}

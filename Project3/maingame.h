@@ -3,6 +3,7 @@
 #include "Rocket.h"
 #include "TileMap.h"
 #include "EnemyManager.h"
+#include "AniScene.h"
 
 
 //class Flame;
@@ -12,8 +13,12 @@ class maingame :public GameNode
 private:
 	GameNode* _GN;
 	Rocket* _rocket;
-	TileMap* _tileMap;
+	//TileMap* _tileMap;
 	EnemyManager* _em;
+
+	AniScene* _as;
+	float _x, _y;
+	RECT rc;
 
 
 public:

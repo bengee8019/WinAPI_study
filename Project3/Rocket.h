@@ -2,6 +2,7 @@
 #include "GameNode.h"
 #include "Flame.h"
 #include "Bullets.h"
+#include "ProgressBar.h"
 
 #define ROCKET_SPEED 3.0f
 
@@ -72,6 +73,7 @@ private:
 	MissileM1* _miniRocket;
 	Beam* _beam;
 	EWeapon _setWeapon;
+	ProgressBar* _hpBar;
 	//GImage* objectData;
 	//Flame* (*pfFlame) (void);
 	//Flame( int& xpos,  int& ypos);
@@ -79,6 +81,9 @@ private:
 	RECT _rc;
 	float _x, _y;
 	bool _beamIrradiation;
+
+	float _currentHp;
+	float _maxHp;
 	//vector<std::shared_ptr<Rocket>> spRocket;
 
 public:
@@ -90,6 +95,19 @@ public:
 
 	MissileM1* getMissile(void) { return _Weapon; }
 	Beam* getBeam(void) { return _beam; }
+	RECT getRect(void) { return _rc; }
+	inline void hitDamage(float damage)
+	{
+		if (_currentHp <= 0)
+		{
+			_currentHp = 0;
+
+		}
+		else
+		{
+			_currentHp += damage;
+		}
+	}
 	void WeaponChange();
 	//POINT* 
 	//포인터를 공유한다 -> 소유권 문제 발생할 수 있다. 

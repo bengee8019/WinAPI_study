@@ -180,7 +180,7 @@ using namespace MY_UTIL;
 #define WINNAME		(LPTSTR)(TEXT("WindowsAPI"))
 
 // !전체화면
-#define FULLSCREEN
+//#define FULLSCREEN
 
 #ifdef FULLSCREEN
 
@@ -194,7 +194,7 @@ using namespace MY_UTIL;
 
 #define WINSTART_X	0
 #define WINSTART_Y	0
-#define WINSIZE_X	1280
+#define WINSIZE_X	600
 #define WINSIZE_Y	800
 #define WINSTYLE	WS_CAPTION | WS_SYSMENU
 #endif
