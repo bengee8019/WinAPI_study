@@ -53,6 +53,7 @@
 */
 #pragma endregion
 
+class EnemyManager;
 
 // enable_shared_from_this: 객체의 생성 및 소멸에 의한 참조 문제를 해결한다.
 // 각각의 객체에게 소유권을 부여한다.
@@ -74,6 +75,7 @@ private:
 	Beam* _beam;
 	EWeapon _setWeapon;
 	ProgressBar* _hpBar;
+	EnemyManager* _Em;
 	//GImage* objectData;
 	//Flame* (*pfFlame) (void);
 	//Flame( int& xpos,  int& ypos);
@@ -91,11 +93,17 @@ public:
 	void release(void);
 	void update(void);
 	void render(void);
+
+	void collision(void);
+	void setEnemyManagerMemoryAddress(EnemyManager* em) { _Em = em; }
+
 	void removeMissile(int arrNum);
 
 	MissileM1* getMissile(void) { return _Weapon; }
 	Beam* getBeam(void) { return _beam; }
 	RECT getRect(void) { return _rc; }
+
+	POINT getPosition(void) { return PointMake((int)_x, (int)_y); }
 	inline void hitDamage(float damage)
 	{
 		if (_currentHp <= 0)

@@ -4,6 +4,7 @@
 #include "hitRenderer.h"
 #include "Bullets.h"
 
+class Rocket;
 
 typedef vector<Enemy*> vEnemy;
 typedef vector<Enemy*>::iterator viEnemy;
@@ -14,6 +15,8 @@ class EnemyManager : public GameNode
 private:
 	vEnemy _vMinion;
 	viEnemy _viMinion;
+	Bullet* _bullet;
+	Rocket* _rocket;
 
 	vector<hitRenderer*> _vHitRenderer;
 	vector<hitRenderer*>::iterator _viHitRenderer;
@@ -39,7 +42,16 @@ public:
 	void addHitRenderer(int arrNum);
 	void removeMinion(int arrNum);
 
+	void minionBulletFire(void);
+	void collision(void);
+	
 	vector<Enemy*> getMinions(void) { return _vMinion; }
+
+	Bullet* getBullet(void) { return _bullet; }
+
+	void setRocketMemoryAddress(Rocket* rk) { _rocket = rk; }
+
+
 
 
 

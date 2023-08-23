@@ -13,6 +13,9 @@ HRESULT maingame::init()
 	//_GN->init();
 	_em = new EnemyManager;
 	_em->init();
+	_em->setRocketMemoryAddress(_rocket);
+	_rocket->setEnemyManagerMemoryAddress(_em);
+
 	TIMEMANAGER->init();
 	_as = new AniScene;
 	_as->init();

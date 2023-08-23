@@ -18,7 +18,9 @@ _CurrentFrameY(0),
 _x(0.0f),
 _y(0.0f),
 _rndTimeCount(0.0f),
-_worldTimeCount(0.0f)
+_worldTimeCount(0.0f),
+_rndFireCount(0.0f),
+_bulletFireCount(0.0f)
 {
 }
 
@@ -36,6 +38,9 @@ HRESULT Enemy::init(const char* imageName, POINT position)
 {
 	_worldTimeCount = GetTickCount();
 	_rndTimeCount = RND->getFromFloatTo(50, 150);
+
+	_bulletFireCount = TIMEMANAGER->getWorldTime();
+	_rndFireCount = RND->getFromFloatTo(0.5f, 4.5f);
 	_x = (float)position.x;
 	_y = (float)position.y;
 	_image = IMAGEMANAGER->findImage(imageName);
@@ -90,5 +95,17 @@ void Enemy::animation(void)
 			_CurrentFrameX = 0;
 		}
 	}
+}
+
+bool Enemy::bulletCountFire(void)
+{
+	if (_rndFireCount + _bulletFireCount <= TIMEMANAGER->getWorldTime())
+	{
+		_bulletFireCount = TIMEMANAGER->getWorldTime();
+		_rndFireCount = RND->getFromFloatTo(2.0f, 6.0f);
+
+		return true;
+	}
+	return false;
 }
 

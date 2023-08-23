@@ -1,5 +1,6 @@
 #include "Stdafx.h"
 #include "Rocket.h"
+#include "EnemyManager.h"
 
 
 HRESULT Rocket::init(void)
@@ -108,6 +109,7 @@ void Rocket::update(void)
     //_missile.update();
     _Weapon->update();
 	_beam->update();
+	collision();
 
 	_hpBar->setX(_x - (_rc.right - _rc.left) / 2);
 	_hpBar->setY(_y -10- (_rc.bottom - _rc.top) / 2);
@@ -124,6 +126,26 @@ void Rocket::render(void)
     _Weapon->render();
 	_beam->render();
 	_hpBar->render();
+}
+
+void Rocket::collision(void)
+{
+	for (int i = 0; i < _Weapon->getBullet().size(); i++)
+	{
+		for (int j = 0; j < _Em->getMinions().size(); j++)
+		{
+			RECT rc;
+			if (IntersectRect(&rc, &_Weapon->getBullet()[i].rc, //&_em->getMinions()[j]->getRect()))
+				&CollisionAreaResizing(_Em->getMinions()[j]->getRect(), 40, 30)))
+			{
+				_Weapon->removeBullet(i);
+				_Em->addHitRenderer(j);
+				_Em->removeMinion(j);
+				break;
+			}
+		}
+	}
+
 }
 
 void Rocket::removeMissile(int arrNum)
@@ -170,3 +192,4 @@ void Rocket::WeaponChange()
     }
 
 }
+

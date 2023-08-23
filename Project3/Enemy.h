@@ -15,6 +15,9 @@ protected:
 	float _rndTimeCount;
 	float _worldTimeCount;
 
+	float _rndFireCount;
+	float _bulletFireCount;
+
 	int _shotCooldown;
 
 public:
@@ -30,6 +33,8 @@ public:
 	void draw(void);
 	void shoot(void);
 	void animation(void);
+
+	bool bulletCountFire(void);
 
 	RECT getRect(void) { return _rc; }
 

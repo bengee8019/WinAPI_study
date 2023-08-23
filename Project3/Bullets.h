@@ -150,3 +150,34 @@ public:
 //	TrackerMissile();
 //	~TrackerMissile();
 //};
+
+
+//공용 총알 (쏠때마다 만들고 삭제)
+class Bullet : public GameNode
+{
+private:
+	// 언제 삭제될지 명확하지 않기 때문에 stl vector 가 적합하다.
+	vector<tagBullet> _vBullet;
+	vector<tagBullet>::iterator _viBullet;
+
+	const char* _imageName;
+	int _bulletMax;
+	float _range;
+
+public:
+	HRESULT init(const char* imageName, int bulletMax, float range);
+	void update();
+	void render();
+	void release();
+
+	void fire(float x, float y, float angle, float speed);
+	void draw(void);
+	void move(void);
+	void removeBullet(int arrNum);
+
+	vector<tagBullet> getBullet(void) { return _vBullet; }
+
+
+	Bullet(void) {}
+	virtual ~Bullet() {}
+};

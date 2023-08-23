@@ -483,3 +483,79 @@ void Beam::move(void)
 		}*/
 	}
 }
+
+HRESULT Bullet::init(const char* imageName, int bulletMax, float range)
+{
+	_imageName = imageName;
+	_range = range;
+	_bulletMax = bulletMax;
+
+
+	return S_OK;
+}
+
+void Bullet::update()
+{
+	move();
+}
+
+void Bullet::render()
+{
+	draw();
+}
+
+void Bullet::release()
+{
+	_vBullet.clear();
+}
+
+void Bullet::fire(float x, float y, float angle, float speed)
+{
+	if (_bulletMax <= _vBullet.size()) return;
+
+	tagBullet bullet;
+	ZeroMemory(&bullet, sizeof(tagBullet));
+
+	bullet.img = IMAGEMANAGER->findImage(_imageName);
+	bullet.speed = speed;
+	bullet.angle = angle;
+	bullet.x = bullet.fireX = x;
+	bullet.y = bullet.fireY = y;
+	bullet.rc = RectMakeCenter(bullet.x, bullet.y, bullet.img->getwidth(), bullet.img->getheight());
+
+	_vBullet.push_back(bullet);
+
+}
+
+void Bullet::draw(void)
+{
+	for (_viBullet = _vBullet.begin(); _viBullet != _vBullet.end(); ++_viBullet)
+	{
+		_viBullet->img->render(getMemDC(), _viBullet->rc.left, _viBullet->rc.top);
+	}
+}
+
+void Bullet::move(void)
+{
+	for (_viBullet = _vBullet.begin(); _viBullet != _vBullet.end(); ++_viBullet)
+	{
+		_viBullet->x += cosf(_viBullet->angle) * _viBullet->speed;
+		_viBullet->y += -sinf(_viBullet->angle) * _viBullet->speed;
+
+		_viBullet->rc = RectMakeCenter(_viBullet->x, _viBullet->y, _viBullet->img->getwidth(), _viBullet->img->getheight());
+		if (MY_UTIL::getDistance(_viBullet->fireX, _viBullet->fireY, _viBullet->x, _viBullet->y) >= _range)
+		{
+			//SAFE_DELETE(_viBullet->img);
+			_viBullet = _vBullet.erase(_viBullet);
+		}
+		else
+		{
+			++_viBullet;
+		}
+	}
+}
+
+void Bullet::removeBullet(int arrNum)
+{
+	_vBullet.erase(_vBullet.begin() + arrNum);
+}
