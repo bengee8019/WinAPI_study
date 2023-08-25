@@ -170,6 +170,8 @@
     <ClInclude Include="ProgressBar.h" />
     <ClInclude Include="RandomFunction.h" />
     <ClInclude Include="Rocket.h" />
+    <ClInclude Include="Scene.h" />
+    <ClInclude Include="SceneManager.h" />
     <ClInclude Include="SingletonBase.h" />
     <ClInclude Include="Stdafx.h" />
     <ClInclude Include="TileMap.h" />
@@ -203,6 +205,8 @@
     <ClCompile Include="Minion.cpp" />
     <ClCompile Include="ProgressBar.cpp" />
     <ClCompile Include="Rocket.cpp" />
+    <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="Stdafx.cpp" />
     <ClCompile Include="TileMap.cpp" />
     <ClCompile Include="TimeManager.cpp" />

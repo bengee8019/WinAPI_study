@@ -52,11 +52,11 @@
     <Filter Include="소스 파일\ShootingGame\ProgressBar">
       <UniqueIdentifier>{844231cd-1490-41b7-b9f9-f31b169ca03e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Scene">
+      <UniqueIdentifier>{6282d1f3-0d41-41d1-b9f5-f6ae92e46d36}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="GImage.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="maingame.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
@@ -132,6 +132,15 @@
     <ClInclude Include="AniScene.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>소스 파일\core\manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>소스 파일\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="GImage.h">
+      <Filter>소스 파일\core\manager</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinMain.cpp">
@@ -206,6 +215,12 @@
     </ClCompile>
     <ClCompile Include="AniScene.cpp">
       <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>소스 파일\core\manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>소스 파일\Scene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
