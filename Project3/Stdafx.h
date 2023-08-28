@@ -158,6 +158,7 @@ Inline 함수
 #include "TimeManager.h"
 //#include "TempSoundManager.h"
 //#include "ItemManager.h"
+#include "SceneManager.h"
 #include "Utils.h"
 //
 #include <memory>
@@ -172,7 +173,7 @@ using namespace MY_UTIL;
 #define FONTMANAGER FontManager::getSingleton()
 //#define COLISIONMANAGER CollisionManager::getSingleton()
 #define TIMEMANAGER TimeManager::getSingleton()
-
+#define SCENEMANAGER SceneManager::getSingleton()
 //#define SOUNDMANAGER TempSoundManager::getSingleton()
 //#define ITEMMANAGER ItemManager::getSingleton()
 
@@ -180,7 +181,7 @@ using namespace MY_UTIL;
 #define WINNAME		(LPTSTR)(TEXT("WindowsAPI"))
 
 // !전체화면
-//#define FULLSCREEN
+#define FULLSCREEN
 
 #ifdef FULLSCREEN
 
@@ -214,6 +215,7 @@ using namespace MY_UTIL;
 #define SAFE_DELETE(p)  {if(p){delete (p); (p)=nullptr;}}     // 이식 \ 매크로 한줄원칙
 #define SAFE_DELETE_ARRAY(p) {if(p){delete[] (p); (p)=nullptr;}}
 #define SAFE_RELEASE(p) {if(p){(p)->release();(p)=nullptr;}} 
+#define SAFE_RELEASE_SCENE(p) {if(p) {(p)->Release();(p)=nullptr;}}
 
 // # 전역 변수 #  // 플레이어 클래스의 인벤토리 추천
 extern HINSTANCE _hInstance;

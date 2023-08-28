@@ -172,8 +172,10 @@
     <ClInclude Include="Rocket.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="ShootingScene.h" />
     <ClInclude Include="SingletonBase.h" />
     <ClInclude Include="Stdafx.h" />
+    <ClInclude Include="TestScene.h" />
     <ClInclude Include="TileMap.h" />
     <ClInclude Include="TimeManager.h" />
     <ClInclude Include="Timer.h" />
@@ -183,7 +185,9 @@
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="AniScene.cpp" />
     <ClCompile Include="Bullets.cpp" />
-    <ClCompile Include="Colision.cpp" />
+    <ClCompile Include="Colision.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="CollisionManager.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
@@ -207,7 +211,9 @@
     <ClCompile Include="Rocket.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="ShootingScene.cpp" />
     <ClCompile Include="Stdafx.cpp" />
+    <ClCompile Include="TestScene.cpp" />
     <ClCompile Include="TileMap.cpp" />
     <ClCompile Include="TimeManager.cpp" />
     <ClCompile Include="Timer.cpp" />

@@ -55,6 +55,9 @@
     <Filter Include="소스 파일\Scene">
       <UniqueIdentifier>{6282d1f3-0d41-41d1-b9f5-f6ae92e46d36}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\ShootingGame\Scene">
+      <UniqueIdentifier>{1f239c04-5770-4981-a315-d6c2a107a987}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="maingame.h">
@@ -80,9 +83,6 @@
     </ClInclude>
     <ClInclude Include="SingletonBase.h">
       <Filter>소스 파일\core\singletonbase</Filter>
-    </ClInclude>
-    <ClInclude Include="CommonMacroFunction.h">
-      <Filter>소스 파일\core\manager</Filter>
     </ClInclude>
     <ClInclude Include="RandomFunction.h">
       <Filter>소스 파일\core\manager</Filter>
@@ -140,6 +140,15 @@
     </ClInclude>
     <ClInclude Include="GImage.h">
       <Filter>소스 파일\core\manager</Filter>
+    </ClInclude>
+    <ClInclude Include="CommonMacroFunction.h">
+      <Filter>소스 파일\ShootingGame\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="ShootingScene.h">
+      <Filter>소스 파일\ShootingGame\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="TestScene.h">
+      <Filter>소스 파일\ShootingGame\Scene</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -201,9 +210,6 @@
     <ClCompile Include="CollisionManager.cpp">
       <Filter>소스 파일\core\manager</Filter>
     </ClCompile>
-    <ClCompile Include="Colision.cpp">
-      <Filter>소스 파일\ShootingGame</Filter>
-    </ClCompile>
     <ClCompile Include="hitRenderer.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -221,6 +227,15 @@
     </ClCompile>
     <ClCompile Include="Scene.cpp">
       <Filter>소스 파일\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="ShootingScene.cpp">
+      <Filter>소스 파일\ShootingGame\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Colision.cpp">
+      <Filter>소스 파일\ShootingGame\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="TestScene.cpp">
+      <Filter>소스 파일\ShootingGame\Scene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
