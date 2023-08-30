@@ -150,6 +150,12 @@
     <ClInclude Include="TestScene.h">
       <Filter>소스 파일\ShootingGame\Scene</Filter>
     </ClInclude>
+    <ClInclude Include="INIData.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="INIDataScene.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinMain.cpp">
@@ -236,6 +242,12 @@
     </ClCompile>
     <ClCompile Include="TestScene.cpp">
       <Filter>소스 파일\ShootingGame\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="INIData.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="INIDataScene.cpp">
+      <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

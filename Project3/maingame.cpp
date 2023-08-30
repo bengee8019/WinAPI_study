@@ -5,6 +5,7 @@
 #include "TestScene.h"
 
 
+
 HRESULT maingame::init()
 {
 	GameNode::init(true);
@@ -24,7 +25,7 @@ void maingame::update()
 	GameNode::update();
 	//TIMEMANAGER->update();
 	SCENEMANAGER->update();
-
+	ini.update();
 
 }
 

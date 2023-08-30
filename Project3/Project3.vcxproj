@@ -162,6 +162,8 @@
     <ClInclude Include="GImage.h" />
     <ClInclude Include="hitRenderer.h" />
     <ClInclude Include="ImageManager.h" />
+    <ClInclude Include="INIData.h" />
+    <ClInclude Include="INIDataScene.h" />
     <ClInclude Include="KeyManager.h" />
     <ClInclude Include="maingame.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
@@ -202,6 +204,8 @@
     <ClCompile Include="GImage.cpp" />
     <ClCompile Include="hitRenderer.cpp" />
     <ClCompile Include="ImageManager.cpp" />
+    <ClCompile Include="INIData.cpp" />
+    <ClCompile Include="INIDataScene.cpp" />
     <ClCompile Include="KeyManager.cpp" />
     <ClCompile Include="maingame.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>

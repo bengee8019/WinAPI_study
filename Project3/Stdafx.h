@@ -5,6 +5,7 @@
 #pragma once
 // 경고 무시
 #pragma warning(disable : 4005) // 
+#define _CRT_SECURE_NO_WARNINGS 
 // 4005: DXGI 등 그래픽 인터페이스에서 매크로 관련하여 출력되는 경고 //c++ > 고급 > 특정경고 사용안함
 /*
 ▶ Stdafx
@@ -159,6 +160,7 @@ Inline 함수
 //#include "TempSoundManager.h"
 //#include "ItemManager.h"
 #include "SceneManager.h"
+#include "INIData.h"
 #include "Utils.h"
 //
 #include <memory>
@@ -174,6 +176,7 @@ using namespace MY_UTIL;
 //#define COLISIONMANAGER CollisionManager::getSingleton()
 #define TIMEMANAGER TimeManager::getSingleton()
 #define SCENEMANAGER SceneManager::getSingleton()
+#define INIDATAMANAGER INIData::getSingleton()
 //#define SOUNDMANAGER TempSoundManager::getSingleton()
 //#define ITEMMANAGER ItemManager::getSingleton()
 

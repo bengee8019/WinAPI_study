@@ -62,6 +62,8 @@ void GameNode::release()
 		TIMEMANAGER->releaseSingleton();
 		TIMEMANAGER->releaseSingleton();
 		SCENEMANAGER->releaseSingleton();
+		INIDATAMANAGER->release();
+		INIDATAMANAGER->releaseSingleton();
 
 		//SOUNDMANAGER->releaseSingleton();
 	}
