@@ -9,7 +9,8 @@
 HRESULT maingame::init()
 {
 	GameNode::init(true);
-
+	SOUNDMANAGER->init();
+	SOUNDMANAGER->addSound("테스트", "Resources/sound/title.mp3", true, true);
 	SCENEMANAGER->addScene("슈팅", new ShootingScene);
 	SCENEMANAGER->addScene("테스트", new TestScene);
 
@@ -24,6 +25,11 @@ void maingame::update()
 {
 	GameNode::update();
 	//TIMEMANAGER->update();
+	if (KEYMANAGER->isOnceKeyDown(VK_RBUTTON))
+	{
+		SOUNDMANAGER->play("테스트", 0.5);
+	}
+	SOUNDMANAGER->update();
 	SCENEMANAGER->update();
 	ini.update();
 
@@ -43,6 +49,7 @@ void maingame::render()
 
 void maingame::release()
 {
+	SOUNDMANAGER->release();
 	//IMAGEMANAGER->deleteAll();
 
 }

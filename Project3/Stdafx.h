@@ -38,11 +38,16 @@
 //! 라이브러리 추가
 #pragma comment (lib, "msimg32.lib")
 #pragma comment(lib, "winmm.lib")
+//#pragma comment(lib, "winmm.lib")
+#pragma comment(lib, "./lib/FMOD/fmodex_vc.lib")
+
+
 
 //! Windows 헤더 파일
 #include <windows.h>
+//#include <wdm.h>
 
-
+#include "./inc/FMOD/fmod.hpp"
 
 //! C 런타임 헤더 파일입니다.
 // stdlib: C언어의 표준 라이브러리 함수의 헤더 파일
@@ -160,6 +165,7 @@ Inline 함수
 //#include "TempSoundManager.h"
 //#include "ItemManager.h"
 #include "SceneManager.h"
+#include "SoundManager.h"
 #include "INIData.h"
 #include "Utils.h"
 //
@@ -177,6 +183,7 @@ using namespace MY_UTIL;
 #define TIMEMANAGER TimeManager::getSingleton()
 #define SCENEMANAGER SceneManager::getSingleton()
 #define INIDATAMANAGER INIData::getSingleton()
+#define SOUNDMANAGER SoundManager::getSingleton()
 //#define SOUNDMANAGER TempSoundManager::getSingleton()
 //#define ITEMMANAGER ItemManager::getSingleton()
 
