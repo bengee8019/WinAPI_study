@@ -17,7 +17,7 @@ HRESULT maingame::init()
 	//================================================
 
 	SCENEMANAGER->changeScene("Å×½ºÆ®");
-
+	//Json::Value
 	return S_OK;
 }
 

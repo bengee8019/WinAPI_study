@@ -58,6 +58,9 @@
     <Filter Include="소스 파일\ShootingGame\Scene">
       <UniqueIdentifier>{1f239c04-5770-4981-a315-d6c2a107a987}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Schema">
+      <UniqueIdentifier>{c0c2f5e1-e683-4358-8b03-48579ba21d46}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="maingame.h">
@@ -159,6 +162,12 @@
     <ClInclude Include="SoundManager.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="JsonSaveLoader.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Json.h">
+      <Filter>소스 파일\Schema</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinMain.cpp">
@@ -255,6 +264,12 @@
     <ClCompile Include="SoundManager.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="JsonSaveLoader.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Json.cpp">
+      <Filter>소스 파일\Schema</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="CordingInterview\Question.txt">
@@ -269,5 +284,16 @@
     <Text Include="todolist.txt">
       <Filter>Memo</Filter>
     </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Quest.json">
+      <Filter>소스 파일\Schema</Filter>
+    </None>
+    <None Include="Character.json">
+      <Filter>소스 파일\Schema</Filter>
+    </None>
+    <None Include="ItemInfo.json">
+      <Filter>소스 파일\Schema</Filter>
+    </None>
   </ItemGroup>
 </Project>

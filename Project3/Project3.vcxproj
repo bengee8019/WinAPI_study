@@ -79,6 +79,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\Users\언리얼\source\repos\Project3\Project3\jsoncpp\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\언리얼\source\repos\Project3\Project3\jsoncpp\lib_json.tlog;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -125,6 +127,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>json_vc71_libmtd.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -164,6 +167,8 @@
     <ClInclude Include="ImageManager.h" />
     <ClInclude Include="INIData.h" />
     <ClInclude Include="INIDataScene.h" />
+    <ClInclude Include="Json.h" />
+    <ClInclude Include="JsonSaveLoader.h" />
     <ClInclude Include="KeyManager.h" />
     <ClInclude Include="maingame.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
@@ -207,6 +212,8 @@
     <ClCompile Include="ImageManager.cpp" />
     <ClCompile Include="INIData.cpp" />
     <ClCompile Include="INIDataScene.cpp" />
+    <ClCompile Include="Json.cpp" />
+    <ClCompile Include="JsonSaveLoader.cpp" />
     <ClCompile Include="KeyManager.cpp" />
     <ClCompile Include="maingame.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
@@ -231,6 +238,11 @@
     <Text Include="CordingInterview\Question.txt" />
     <Text Include="기능 배분.txt" />
     <Text Include="todolist.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Character.json" />
+    <None Include="ItemInfo.json" />
+    <None Include="Quest.json" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
