@@ -48,10 +48,10 @@ void TimeManager::render(HDC hdc)
 		TextOut(hdc, 0, 0, str, strlen(str));
 
 		sprintf_s(str, "WorldTime: %f", _timer->getWorldTime());
-		TextOut(hdc, 0, 0, str, strlen(str));
+		TextOut(hdc, 0, 15, str, strlen(str));
 
 		sprintf_s(str, "ElapsedTime: %f", _timer->getElapsedTime());
-		TextOut(hdc, 0, 0, str, strlen(str));
+		TextOut(hdc, 0, 30, str, strlen(str));
 	}
 #else
 	if (_timer != nullptr)

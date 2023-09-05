@@ -13,10 +13,11 @@ HRESULT maingame::init()
 	SOUNDMANAGER->addSound("테스트", "Resources/sound/title.mp3", true, true);
 	SCENEMANAGER->addScene("슈팅", new ShootingScene);
 	SCENEMANAGER->addScene("테스트", new TestScene);
+	SCENEMANAGER->addScene("제이슨", new JsonDataScene);
 
 	//================================================
 
-	SCENEMANAGER->changeScene("테스트");
+	SCENEMANAGER->changeScene("제이슨");
 	//Json::Value
 	return S_OK;
 }

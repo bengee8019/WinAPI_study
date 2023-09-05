@@ -167,14 +167,16 @@
     <ClInclude Include="ImageManager.h" />
     <ClInclude Include="INIData.h" />
     <ClInclude Include="INIDataScene.h" />
-    <ClInclude Include="Json.h" />
+    <ClInclude Include="JsonDataScene.h" />
     <ClInclude Include="JsonSaveLoader.h" />
     <ClInclude Include="KeyManager.h" />
     <ClInclude Include="maingame.h">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClInclude>
     <ClInclude Include="Minion.h" />
     <ClInclude Include="ProgressBar.h" />
+    <ClInclude Include="Quest.h" />
+    <ClInclude Include="QuestSample.h" />
     <ClInclude Include="RandomFunction.h" />
     <ClInclude Include="Rocket.h" />
     <ClInclude Include="Scene.h" />
@@ -212,14 +214,16 @@
     <ClCompile Include="ImageManager.cpp" />
     <ClCompile Include="INIData.cpp" />
     <ClCompile Include="INIDataScene.cpp" />
-    <ClCompile Include="Json.cpp" />
+    <ClCompile Include="JsonDataScene.cpp" />
     <ClCompile Include="JsonSaveLoader.cpp" />
     <ClCompile Include="KeyManager.cpp" />
     <ClCompile Include="maingame.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="Minion.cpp" />
     <ClCompile Include="ProgressBar.cpp" />
+    <ClCompile Include="Quest.cpp" />
+    <ClCompile Include="QuestSample.cpp" />
     <ClCompile Include="Rocket.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SceneManager.cpp" />

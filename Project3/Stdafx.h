@@ -39,7 +39,7 @@
 #pragma comment (lib, "msimg32.lib")
 #pragma comment(lib, "winmm.lib")
 //#pragma comment(lib, "winmm.lib")
-#pragma comment(lib, "./lib/FMOD/fmodex_vc.lib")
+#pragma comment(lib, "./lib/FMOD/fmodex64_vc.lib")
 #pragma comment(lib, "./jsoncpp/lib_json.tlog/json_vc71_libmtd.lib")
 
 //! Windows 헤더 파일
@@ -189,6 +189,7 @@ using namespace MY_UTIL;
 #define SCENEMANAGER SceneManager::getSingleton()
 #define INIDATAMANAGER INIData::getSingleton()
 #define SOUNDMANAGER SoundManager::getSingleton()
+#define JSONDATAMANAGER JsonSaveLoader::getSingleton()
 
 //#define SOUNDMANAGER TempSoundManager::getSingleton()
 //#define ITEMMANAGER ItemManager::getSingleton()

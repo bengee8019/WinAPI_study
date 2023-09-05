@@ -211,7 +211,15 @@ Json::Value JsonSaveLoader::loadJsonFile(char* fileName)
 	//parse: 파싱을 하는 프로세서
 	bool parsingRet = reader.parse(jsonStr, root);
 
+	if (!parsingRet)
+	{
+		string errorMsg = reader.getFormatedErrorMessages();
+		MessageBox(_hWnd, errorMsg.c_str(), "오류", MB_OK);
+		PostQuitMessage(0);
+		//외부 라이브러리를 사용하는 경우에는
+		//오류가 발생해도 정확하게 못알려줄 경우가 많기 때문에
+		//조건식으로 직접 잡아내고 메세지박스로 검출 하는게 좋겠다.
+	}
 
-
-	return Json::Value();
+	return root;
 }
