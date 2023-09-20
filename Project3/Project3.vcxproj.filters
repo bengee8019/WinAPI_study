@@ -296,6 +296,9 @@
     <Text Include="todolist.txt">
       <Filter>Memo</Filter>
     </Text>
+    <Text Include="Unreal.txt">
+      <Filter>Memo</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <None Include="Quest.json">

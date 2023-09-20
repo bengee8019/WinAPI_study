@@ -67,3 +67,6 @@ Visual Assist
 	ㄴ 선입선출
 	ㄴ CPU 스케줄링
 	ㄴ print queue, 
+
+
+

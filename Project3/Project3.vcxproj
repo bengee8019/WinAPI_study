@@ -43,7 +43,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
@@ -242,6 +242,7 @@
     <Text Include="CordingInterview\Question.txt" />
     <Text Include="기능 배분.txt" />
     <Text Include="todolist.txt" />
+    <Text Include="Unreal.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Character.json" />
